@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Generic
+﻿namespace Generic
 {
     public class CommonMethod
     {
@@ -41,9 +35,6 @@ namespace Generic
         /// 打印个object值
         /// 1 任何父类出现的地方，都可以用子类来代替
         /// 2 object是一切类型的父类
-        /// 
-        /// 2个问题：
-        /// 1 装箱拆箱
         /// </summary>
         /// <param name="oParameter"></param>
         public static void ShowObject(object oParameter)
@@ -52,6 +43,12 @@ namespace Generic
                 typeof(CommonMethod), oParameter.GetType().Name, oParameter);
         }
 
+        /// <summary>
+        /// 使用泛型
+        /// T可以是任何类型
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="tParameter"></param>
         public static void Show<T>(T tParameter)//, T t = default(T
         {
             Console.WriteLine("This is {0},parameter={1},type={2}",
