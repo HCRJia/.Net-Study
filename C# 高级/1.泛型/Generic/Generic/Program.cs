@@ -1,4 +1,6 @@
 ﻿using Generic;
+using MyGeneric;
+using System;
 
 int iValue = 123;
 string sValue = "456";
@@ -26,8 +28,41 @@ object oValue = "678";
 //for (int i = 0; i < 10; i++) { Generic.Monitor.Show(); }
 
 // T是int类型
-GenericClass<int> genericInt = new GenericClass<int>();
-genericInt._T = 123;
-// T是string类型
-GenericClass<string> genericString = new GenericClass<string>();
-genericString._T = "123";
+//GenericClass<int> genericInt = new GenericClass<int>();
+//genericInt._T = 123;
+//// T是string类型
+//GenericClass<string> genericString = new GenericClass<string>();
+//genericString._T = "123";
+
+People people = new People()
+{
+    Id = 123,
+    Name = "Mike"
+};
+Chinese chinese = new Chinese()
+{
+    Id = 234,
+    Name = "张三"
+};
+ZheJiang zhejiang = new ZheJiang()
+{
+    Id = 345,
+    Name = "李四"
+};
+Japanese japanese = new Japanese()
+{
+    Id = 456,
+    Name = "路飞"
+};
+
+//GenericConstraint.ShowObject(people);
+//GenericConstraint.ShowObject(chinese);
+//GenericConstraint.ShowObject(zhejiang);
+
+int num = 123;
+//GenericConstraint.ShowObject(123);
+
+GenericConstraint.Show<People>(people);
+GenericConstraint.Show<Chinese>(chinese);
+GenericConstraint.Show<ZheJiang>(zhejiang);
+GenericConstraint.Show<int>(num);

@@ -1,10 +1,5 @@
 ﻿namespace MyGeneric
 {
-    public interface ISports
-    {
-        void Pingpang();
-    }
-
     public interface IWork
     {
         void Work();
@@ -21,20 +16,11 @@
 
     }
 
-    public class Chinese : People, ISports, IWork
+    public class Chinese : People, IWork
     {
-        public void Tradition()
-        {
-            Console.WriteLine("仁义礼智信，温良恭俭让");
-        }
         public void SayHi()
         {
-            Console.WriteLine("吃了么？");
-        }
-
-        public void Pingpang()
-        {
-            Console.WriteLine("打乒乓球...");
+            Console.WriteLine("你好");
         }
 
         public void Work()
@@ -43,25 +29,25 @@
         }
     }
 
-    public class Hubei : Chinese
+    public class ZheJiang : Chinese
     {
-        public string Changjiang { get; set; }
-        public void Majiang()
+        public string XiHu { get; set; }
+        public void SayHello()
         {
-            Console.WriteLine("打麻将啦。。");
+            Console.WriteLine("我是浙江人");
         }
     }
 
 
-    public class Japanese : ISports
+    public class Japanese : IWork
     {
         public int Id { get; set; }
         public string Name { get; set; }
 
 
-        public void Pingpang()
+        public void Work()
         {
-            Console.WriteLine("打乒乓球...");
+            Console.WriteLine("工作");
         }
     }
 }
