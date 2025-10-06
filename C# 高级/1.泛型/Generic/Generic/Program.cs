@@ -1,4 +1,5 @@
 ﻿using Generic;
+using Generic.Extend;
 using MyGeneric;
 using System;
 
@@ -65,4 +66,8 @@ int num = 123;
 GenericConstraint.Show<People>(people);
 GenericConstraint.Show<Chinese>(chinese);
 GenericConstraint.Show<ZheJiang>(zhejiang);
-GenericConstraint.Show<int>(num);
+//GenericConstraint.Show<int>(num);
+
+CCTest.Show();
+
+
