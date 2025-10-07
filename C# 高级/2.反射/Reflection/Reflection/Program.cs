@@ -50,12 +50,12 @@ using System.Reflection;
 /// </summary>
 /// 
 {
-    //Console.WriteLine("************************Common*****************");
-    //IDBHelper iDBHelper = new MySqlHelper();
+    Console.WriteLine("************************Common*****************");
+    IDBHelper iDBHelper = new MySqlHelper();
     //IDBHelper iDBHelper = new SqlServerHelper();
-    //iDBHelper.Query();
+    iDBHelper.Query();
 
-    //MySqlHelper换成SqlServerHelper  就必须修改现有代码 重新编译 发布
+    //MySqlHelper换成SqlServerHelper 就必须修改现有代码 重新编译 发布
 }
 
 // 反射

@@ -4,3 +4,11 @@
 /C# 高级/2.反射/Reflection/.vs
 /C# 高级/2.反射/Reflection/Reflection/bin
 /C# 高级/2.反射/Reflection/Reflection/obj
+/C# 高级/2.反射/Reflection/DB.Interface/bin
+/C# 高级/2.反射/Reflection/DB.Interface/obj
+/C# 高级/2.反射/Reflection/DB.MySql/bin
+/C# 高级/2.反射/Reflection/DB.MySql/obj
+/C# 高级/2.反射/Reflection/DB.Oracle/bin
+/C# 高级/2.反射/Reflection/DB.Oracle/obj
+/C# 高级/2.反射/Reflection/DB.SqlServer/bin
+/C# 高级/2.反射/Reflection/DB.SqlServer/obj
