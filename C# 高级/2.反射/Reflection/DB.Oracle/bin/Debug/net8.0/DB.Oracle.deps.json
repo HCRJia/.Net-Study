@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "DB.Oracle/1.0.0": {
+        "dependencies": {
+          "DB.Interface": "1.0.0"
+        },
+        "runtime": {
+          "DB.Oracle.dll": {}
+        }
+      },
+      "DB.Interface/1.0.0": {
+        "runtime": {
+          "DB.Interface.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "DB.Oracle/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DB.Interface/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

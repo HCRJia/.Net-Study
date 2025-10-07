@@ -1,0 +1,12 @@
+D:\Code\.Net-Study\C# 高级\2.反射\Reflection\DB.Interface\obj\Debug\net8.0\DB.Interface.GeneratedMSBuildEditorConfig.editorconfig
+D:\Code\.Net-Study\C# 高级\2.反射\Reflection\DB.Interface\obj\Debug\net8.0\DB.Interface.AssemblyInfoInputs.cache
+D:\Code\.Net-Study\C# 高级\2.反射\Reflection\DB.Interface\obj\Debug\net8.0\DB.Interface.AssemblyInfo.cs
+D:\Code\.Net-Study\C# 高级\2.反射\Reflection\DB.Interface\obj\Debug\net8.0\DB.Interface.csproj.CoreCompileInputs.cache
+D:\Code\.Net-Study\C# 高级\2.反射\Reflection\DB.Interface\obj\Debug\net8.0\DB.Interface.sourcelink.json
+D:\Code\.Net-Study\C# 高级\2.反射\Reflection\DB.Interface\bin\Debug\net8.0\DB.Interface.deps.json
+D:\Code\.Net-Study\C# 高级\2.反射\Reflection\DB.Interface\bin\Debug\net8.0\DB.Interface.dll
+D:\Code\.Net-Study\C# 高级\2.反射\Reflection\DB.Interface\bin\Debug\net8.0\DB.Interface.pdb
+D:\Code\.Net-Study\C# 高级\2.反射\Reflection\DB.Interface\obj\Debug\net8.0\DB.Interface.dll
+D:\Code\.Net-Study\C# 高级\2.反射\Reflection\DB.Interface\obj\Debug\net8.0\refint\DB.Interface.dll
+D:\Code\.Net-Study\C# 高级\2.反射\Reflection\DB.Interface\obj\Debug\net8.0\DB.Interface.pdb
+D:\Code\.Net-Study\C# 高级\2.反射\Reflection\DB.Interface\obj\Debug\net8.0\ref\DB.Interface.dll
