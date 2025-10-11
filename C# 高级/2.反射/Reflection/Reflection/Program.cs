@@ -219,7 +219,29 @@ using System.Reflection;
     Type type = assembly.GetType("DB.SqlServer.ReflectionTest");
     object oTest = Activator.CreateInstance(type);
     var method = type.GetMethod("Show4", BindingFlags.Instance | BindingFlags.NonPublic);
-    method.Invoke(oTest, new object[] { "我是老王" });
+    method.Invoke(oTest, new object[] { "我是李四" });
 }
 
+{
+    Console.WriteLine("********************GenericMethod********************");
+    Assembly assembly = Assembly.Load("DB.SqlServer");
+    Type type = assembly.GetType("DB.SqlServer.GenericMethod");
+    object oGeneric = Activator.CreateInstance(type);
+    //foreach (var item in type.GetMethods())
+    //{
+    //    Console.WriteLine(item.Name);
+    //}
+    MethodInfo method = type.GetMethod("Show");
+    var methodNew = method.MakeGenericMethod(new Type[] { typeof(int), typeof(string), typeof(DateTime) });
+    object oReturn = methodNew.Invoke(oGeneric, new object[] { 123, "张三", DateTime.Now });
+}
+{
+    Console.WriteLine("********************GenericMethod+GenericClass********************");
+    Assembly assembly = Assembly.Load("Ruanmou.DB.SqlServer");
+    Type type = assembly.GetType("Ruanmou.DB.SqlServer.GenericDouble`1").MakeGenericType(typeof(int));
+    object oObject = Activator.CreateInstance(type);
+    MethodInfo method = type.GetMethod("Show").MakeGenericMethod(typeof(string), typeof(DateTime));
+    method.Invoke(oObject, new object[] { 345, "感谢有梦", DateTime.Now });
+
+}
 Console.ReadLine();
