@@ -26,5 +26,5 @@ namespace DB.SqlServer
         {
             return _Singleton;
         }
-    }
+    } 
 }

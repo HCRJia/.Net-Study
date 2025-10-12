@@ -189,59 +189,54 @@ using System.Reflection;
     //    method.Invoke(oTest, new object[] { 123 });
     //}
     //{
-    //    MethodInfo method = type.GetMethod("Show3", new Type[] { typeof(string) });
-    //    method.Invoke(oTest, new object[] { "一生为你" });
-    //}
-    //{
     //    MethodInfo method = type.GetMethod("Show3", new Type[] { typeof(int), typeof(string) });
-    //    method.Invoke(oTest, new object[] { 234, "心欲无痕" });
-    //}
-    //{
-    //    MethodInfo method = type.GetMethod("Show3", new Type[] { typeof(string), typeof(int) });
-    //    method.Invoke(oTest, new object[] { "PHS", 345 });
+    //    method.Invoke(oTest, new object[] { 234, "测试2" });
     //}
     //{
     //    MethodInfo method = type.GetMethod("Show5");
-    //    method.Invoke(oTest, new object[] { "张中魁" });//静态方法实例可以要
-    //    method.Invoke(null, new object[] { "张中魁" });//静态方法实例也可以不要
+    //    method.Invoke(oTest, new object[] { "张三" });//静态方法实例可以要
+    //    method.Invoke(null, new object[] { "张三" });//静态方法实例也可以不要
     //}
     //{
     //    MethodInfo method = type.GetMethod("Show5");
-    //    
+
     //}
-    //ref out的怎么调用
 }
 
 {
     //调用私有方法
-    Console.WriteLine("&&&&&&&&&&&&&&&&&&&&私有方法&&&&&&&&&&&&&&&&&&&");
-    Assembly assembly = Assembly.Load("DB.SqlServer");
-    Type type = assembly.GetType("DB.SqlServer.ReflectionTest");
-    object oTest = Activator.CreateInstance(type);
-    var method = type.GetMethod("Show4", BindingFlags.Instance | BindingFlags.NonPublic);
-    method.Invoke(oTest, new object[] { "我是李四" });
+    //Console.WriteLine("&&&&&&&&&&&&&&&&&&&&私有方法&&&&&&&&&&&&&&&&&&&");
+    //Assembly assembly = Assembly.Load("DB.SqlServer");
+    //Type type = assembly.GetType("DB.SqlServer.ReflectionTest");
+    //object oTest = Activator.CreateInstance(type);
+    //var method = type.GetMethod("Show4", BindingFlags.Instance | BindingFlags.NonPublic);
+    //method.Invoke(oTest, new object[] { "我是李四" });
 }
 
 {
-    Console.WriteLine("********************GenericMethod********************");
-    Assembly assembly = Assembly.Load("DB.SqlServer");
-    Type type = assembly.GetType("DB.SqlServer.GenericMethod");
-    object oGeneric = Activator.CreateInstance(type);
-    //foreach (var item in type.GetMethods())
-    //{
-    //    Console.WriteLine(item.Name);
-    //}
-    MethodInfo method = type.GetMethod("Show");
-    var methodNew = method.MakeGenericMethod(new Type[] { typeof(int), typeof(string), typeof(DateTime) });
-    object oReturn = methodNew.Invoke(oGeneric, new object[] { 123, "张三", DateTime.Now });
+    //Console.WriteLine("********************GenericMethod********************");
+    //Assembly assembly = Assembly.Load("DB.SqlServer");
+    //Type type = assembly.GetType("DB.SqlServer.GenericMethod");
+    //object oGeneric = Activator.CreateInstance(type);
+    ////foreach (var item in type.GetMethods())
+    ////{
+    ////    Console.WriteLine(item.Name);
+    ////}
+    //MethodInfo method = type.GetMethod("Show");
+    //var methodNew = method.MakeGenericMethod(new Type[] { typeof(int), typeof(string), typeof(DateTime) });
+    //object oReturn = methodNew.Invoke(oGeneric, new object[] { 123, "张三", DateTime.Now });
 }
 {
-    Console.WriteLine("********************GenericMethod+GenericClass********************");
-    Assembly assembly = Assembly.Load("Ruanmou.DB.SqlServer");
-    Type type = assembly.GetType("Ruanmou.DB.SqlServer.GenericDouble`1").MakeGenericType(typeof(int));
-    object oObject = Activator.CreateInstance(type);
-    MethodInfo method = type.GetMethod("Show").MakeGenericMethod(typeof(string), typeof(DateTime));
-    method.Invoke(oObject, new object[] { 345, "感谢有梦", DateTime.Now });
+    //Console.WriteLine("********************GenericMethod+GenericClass********************");
+    //Assembly assembly = Assembly.Load("DB.SqlServer");
+    //Type type = assembly.GetType("DB.SqlServer.GenericDouble`1").MakeGenericType(typeof(int));
+    //object oObject = Activator.CreateInstance(type);
+    //MethodInfo method = type.GetMethod("Show").MakeGenericMethod(typeof(string), typeof(DateTime));
+    //method.Invoke(oObject, new object[] { 345, "这是一个测试", DateTime.Now });
 
+}
+
+{
+    Reflection.Monitor.Show();
 }
 Console.ReadLine();

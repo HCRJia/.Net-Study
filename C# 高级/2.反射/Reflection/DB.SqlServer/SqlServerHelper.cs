@@ -6,13 +6,13 @@ namespace DB.SqlServer
     {
         public SqlServerHelper()
         {
-            Console.WriteLine("{0}被构造", this.GetType().Name);
+            //Console.WriteLine("{0}被构造", this.GetType().Name);
         }
 
 
         public void Query()
         {
-            Console.WriteLine("{0}.Query", this.GetType().Name);
+            //Console.WriteLine("{0}.Query", this.GetType().Name);
         }
     }
 }
