@@ -1,7 +1,10 @@
-﻿#region OO面向对象
+﻿
 using MyOO;
+using MyOO.Interface;
+using MyOO.Polymorphism;
 using MyOO.Service;
 using System.Numerics;
+using static System.Net.Mime.MediaTypeNames;
 
 /// 1 封装继承多态
 /// 2 重写overwrite(new)  覆写override 重载overload(方法)
@@ -51,5 +54,9 @@ Console.WriteLine("结束游戏。。。");
     };
     iPhone phone = new iPhone();
     player.PlayiPhone(phone);
+
+    //BasePhone basePhone = new();
+
+    Poly.Test();
 }
 #endregion

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace MyOO.Service
 {
 
-    public class Lumia : BasePhone, IExtend
+    public class Vivo : BasePhone, IExtend
     {
         public void PlayGame()
         {
@@ -23,7 +23,7 @@ namespace MyOO.Service
 
         public override void System()
         {
-            Console.WriteLine($"{this.GetType().Name} System is WinPhone");
+            Console.WriteLine($"{this.GetType().Name} System is Android");
         }
         //public void Call()
         //{
