@@ -1,8 +1,8 @@
 ﻿
 using MyDelegate;
 
-//MyDelegateUse myDelegate = new MyDelegateUse();
-//myDelegate.DelegateUse();
+MyDelegateUse myDelegate = new MyDelegateUse();
+myDelegate.DelegateUse();
 
 {
     Student student = new Student()
