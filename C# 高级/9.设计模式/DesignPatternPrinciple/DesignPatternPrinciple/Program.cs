@@ -1,4 +1,6 @@
 ﻿using DesignPatternPrinciple;
+using DesignPatternPrinciple.SRP;
+using DesignPatternPrinciple.LOD;
 /// <summary>
 /// 1.  单一职责原则（Single Responsibility Principle）
 /// 2.  里氏替换原则（Liskov Substitution Principle）
@@ -17,5 +19,11 @@
 /// 
 {
     Console.WriteLine("*******************单一职责原则********************");
-    DesignPatternPrinciple.SRP.SRPShow.Show();
+    SRPShow.Show();
+}
+{
+
+}
+{
+    LODShow.Show();
 }
