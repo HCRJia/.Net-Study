@@ -1,6 +1,7 @@
 ﻿using DesignPatternPrinciple;
 using DesignPatternPrinciple.SRP;
 using DesignPatternPrinciple.LOD;
+using DesignPatternPrinciple.DIP;
 /// <summary>
 /// 1.  单一职责原则（Single Responsibility Principle）
 /// 2.  里氏替换原则（Liskov Substitution Principle）
@@ -18,12 +19,26 @@ using DesignPatternPrinciple.LOD;
 /// </summary>
 /// 
 {
-    Console.WriteLine("*******************单一职责原则********************");
-    SRPShow.Show();
+    //Console.WriteLine("*******************单一职责原则********************");
+    //SRP.SRPShow.Show();
 }
 {
-
+    //Console.WriteLine("*******************里氏替换原则********************");
+    //LSP.LSPShow.Show();
 }
 {
-    LODShow.Show();
+    Console.WriteLine("*******************依赖倒置原则********************");
+    DIPShow.Show();
 }
+//{
+//    Console.WriteLine("*******************接口隔离原则********************");
+//    ISP.ISPShow.Show();
+//}
+//{
+//    Console.WriteLine("*******************迪米特法则********************");
+//    LOD.LODShow.Show();
+//}
+//{
+//    Console.WriteLine("*******************里氏替换原则********************");
+//    OCP.OCPShow.Show();
+//}
