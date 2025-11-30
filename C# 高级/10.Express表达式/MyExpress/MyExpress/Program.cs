@@ -12,12 +12,12 @@ try
     //    new List<int>().AsQueryable().Where(i => i > 10);
     //}
     {
-        Console.WriteLine("****************认识表达式目录树*************");
-        ExpressionTest.Show();
+        //Console.WriteLine("****************认识表达式目录树*************");
+        //ExpressionTest.Show();
     }
     {
         Console.WriteLine("********************MapperTest********************");
-        //ExpressionTest.MapperTest();
+        ExpressionTest.MapperTest();
     }
     {
         Console.WriteLine("********************解析表达式目录树********************");

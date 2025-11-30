@@ -1,4 +1,5 @@
-﻿using MyExpress.MappingExtend;
+﻿using ExpressionDemo.MappingExtend;
+using MyExpress.MappingExtend;
 using System.Diagnostics;
 using System.Linq.Expressions;
 using System.Reflection;
@@ -290,14 +291,14 @@ namespace MyExpress
                 };
                 //////假如程序中有很多这样的转换，为每个类型都这样硬编码？！
                 PeopleCopy peopleCopy1=ReflectionMapper.Trans<People, PeopleCopy>(people);//1 反射
-                ////PeopleCopy peopleCopy2=SerializeMapper.Trans<People, PeopleCopy>(people); //2 序列化反序列化
+                PeopleCopy peopleCopy2=SerializeMapper.Trans<People, PeopleCopy>(people); //2 序列化反序列化
                 //////既能通用，又能性能好
-                ////Func<People, PeopleCopy> func = p => new PeopleCopy()
-                ////{
-                ////    Id = p.Id,
-                ////    Name = p.Name,
-                ////    Age = p.Age
-                ////};
+                //Func<People, PeopleCopy> func = p => new PeopleCopy()
+                //{
+                //    Id = p.Id,
+                //    Name = p.Name,
+                //    Age = p.Age
+                //};
                 ////PeopleCopy peopleCopy3 = func.Invoke(people);
                 ////想办法去动态拼装这个委托，然后缓存下委托，后面再次转换时就没有性能损耗了
                 ////PeopleCopy peopleCopy4 = ExpressionMapper.Trans<People, PeopleCopy>(people);
@@ -339,78 +340,78 @@ namespace MyExpress
             }
 
             {
-                //People people = new People()
-                //{
-                //    Id = 11,
-                //    Name = "Eleven",
-                //    Age = 31
-                //};
-                //long common = 0;
-                //long generic = 0;
-                //long cache = 0;
-                //long reflection = 0;
-                //long serialize = 0;
-                //{
-                //    Stopwatch watch = new Stopwatch();
-                //    watch.Start();
-                //    for (int i = 0; i < 1_000_000; i++)
-                //    {
-                //        PeopleCopy peopleCopy = new PeopleCopy()
-                //        {
-                //            Id = people.Id,
-                //            Name = people.Name,
-                //            Age = people.Age
-                //        };
-                //    }
-                //    watch.Stop();
-                //    common = watch.ElapsedMilliseconds;
-                //}
-                //{
-                //    Stopwatch watch = new Stopwatch();
-                //    watch.Start();
-                //    for (int i = 0; i < 1_000_000; i++)
-                //    {
-                //        PeopleCopy peopleCopy = ReflectionMapper.Trans<People, PeopleCopy>(people);
-                //    }
-                //    watch.Stop();
-                //    reflection = watch.ElapsedMilliseconds;
-                //}
-                //{
-                //    Stopwatch watch = new Stopwatch();
-                //    watch.Start();
-                //    for (int i = 0; i < 1_000_000; i++)
-                //    {
-                //        PeopleCopy peopleCopy = SerializeMapper.Trans<People, PeopleCopy>(people);
-                //    }
-                //    watch.Stop();
-                //    serialize = watch.ElapsedMilliseconds;
-                //}
-                //{
-                //    Stopwatch watch = new Stopwatch();
-                //    watch.Start();
-                //    for (int i = 0; i < 1_000_000; i++)
-                //    {
-                //        PeopleCopy peopleCopy = ExpressionMapper.Trans<People, PeopleCopy>(people);
-                //    }
-                //    watch.Stop();
-                //    cache = watch.ElapsedMilliseconds;
-                //}
-                //{
-                //    Stopwatch watch = new Stopwatch();
-                //    watch.Start();
-                //    for (int i = 0; i < 1_000_000; i++)
-                //    {
-                //        PeopleCopy peopleCopy = ExpressionGenericMapper<People, PeopleCopy>.Trans(people);
-                //    }
-                //    watch.Stop();
-                //    generic = watch.ElapsedMilliseconds;
-                //}
+                People people = new People()
+                {
+                    Id = 11,
+                    Name = "Eleven",
+                    Age = 31
+                };
+                long common = 0;
+                long generic = 0;
+                long cache = 0;
+                long reflection = 0;
+                long serialize = 0;
+                {
+                    Stopwatch watch = new Stopwatch();
+                    watch.Start();
+                    for (int i = 0; i < 1_000_000; i++)
+                    {
+                        PeopleCopy peopleCopy = new PeopleCopy()
+                        {
+                            Id = people.Id,
+                            Name = people.Name,
+                            Age = people.Age
+                        };
+                    }
+                    watch.Stop();
+                    common = watch.ElapsedMilliseconds;
+                }
+                {
+                    Stopwatch watch = new Stopwatch();
+                    watch.Start();
+                    for (int i = 0; i < 1_000_000; i++)
+                    {
+                        PeopleCopy peopleCopy = ReflectionMapper.Trans<People, PeopleCopy>(people);
+                    }
+                    watch.Stop();
+                    reflection = watch.ElapsedMilliseconds;
+                }
+                {
+                    Stopwatch watch = new Stopwatch();
+                    watch.Start();
+                    for (int i = 0; i < 1_000_000; i++)
+                    {
+                        PeopleCopy peopleCopy = SerializeMapper.Trans<People, PeopleCopy>(people);
+                    }
+                    watch.Stop();
+                    serialize = watch.ElapsedMilliseconds;
+                }
+                {
+                    Stopwatch watch = new Stopwatch();
+                    watch.Start();
+                    for (int i = 0; i < 1_000_000; i++)
+                    {
+                        PeopleCopy peopleCopy = ExpressionMapper.Trans<People, PeopleCopy>(people);
+                    }
+                    watch.Stop();
+                    cache = watch.ElapsedMilliseconds;
+                }
+                {
+                    Stopwatch watch = new Stopwatch();
+                    watch.Start();
+                    for (int i = 0; i < 1_000_000; i++)
+                    {
+                        PeopleCopy peopleCopy = ExpressionGenericMapper<People, PeopleCopy>.Trans(people);
+                    }
+                    watch.Stop();
+                    generic = watch.ElapsedMilliseconds;
+                }
 
-                //Console.WriteLine($"common = {common} ms");
-                //Console.WriteLine($"reflection = {reflection} ms");
-                //Console.WriteLine($"serialize = {serialize} ms");
-                //Console.WriteLine($"cache = {cache} ms");
-                //Console.WriteLine($"generic = {generic} ms");
+                Console.WriteLine($"common = {common} ms");
+                Console.WriteLine($"reflection = {reflection} ms");
+                Console.WriteLine($"serialize = {serialize} ms");
+                Console.WriteLine($"cache = {cache} ms");
+                Console.WriteLine($"generic = {generic} ms");
                 ////性能比automapper
 
             }
