@@ -1,0 +1,43 @@
+D:\ruanmou\OpenCourse\designmode\13 ProxyPattern\ProxyPattern\ProxyPattern\bin\Debug\ProxyPattern.exe.config
+D:\ruanmou\OpenCourse\designmode\13 ProxyPattern\ProxyPattern\ProxyPattern\bin\Debug\ProxyPattern.exe
+D:\ruanmou\OpenCourse\designmode\13 ProxyPattern\ProxyPattern\ProxyPattern\bin\Debug\ProxyPattern.pdb
+D:\ruanmou\OpenCourse\designmode\13 ProxyPattern\ProxyPattern\ProxyPattern\obj\Debug\ProxyPattern.exe
+D:\ruanmou\OpenCourse\designmode\13 ProxyPattern\ProxyPattern\ProxyPattern\obj\Debug\ProxyPattern.pdb
+D:\ruanmou\online9\20170705Advanced9Course14DesignPatternPrinciple\DesignPattern\ProxyPattern\bin\Debug\ProxyPattern.exe.config
+D:\ruanmou\online9\20170705Advanced9Course14DesignPatternPrinciple\DesignPattern\ProxyPattern\bin\Debug\ProxyPattern.exe
+D:\ruanmou\online9\20170705Advanced9Course14DesignPatternPrinciple\DesignPattern\ProxyPattern\bin\Debug\ProxyPattern.pdb
+D:\ruanmou\online9\20170705Advanced9Course14DesignPatternPrinciple\DesignPattern\ProxyPattern\obj\Debug\ProxyPattern.exe
+D:\ruanmou\online9\20170705Advanced9Course14DesignPatternPrinciple\DesignPattern\ProxyPattern\obj\Debug\ProxyPattern.pdb
+D:\ruanmou\online9\20170705Advanced9Course14DesignPatternPrinciple\DesignPattern\ProxyPattern\obj\Debug\ProxyPattern.csprojResolveAssemblyReference.cache
+D:\ruanmou\online9\20170706Advanced9Course15DesignPattern\DesignPattern\ProxyPattern\bin\Debug\ProxyPattern.exe.config
+D:\ruanmou\online9\20170706Advanced9Course15DesignPattern\DesignPattern\ProxyPattern\bin\Debug\ProxyPattern.exe
+D:\ruanmou\online9\20170706Advanced9Course15DesignPattern\DesignPattern\ProxyPattern\bin\Debug\ProxyPattern.pdb
+D:\ruanmou\online9\20170706Advanced9Course15DesignPattern\DesignPattern\ProxyPattern\obj\Debug\ProxyPattern.exe
+D:\ruanmou\online9\20170706Advanced9Course15DesignPattern\DesignPattern\ProxyPattern\obj\Debug\ProxyPattern.pdb
+D:\ruanmou\online9\20170706Advanced9Course15DesignPattern\DesignPattern\ProxyPattern\obj\Debug\ProxyPattern.csprojResolveAssemblyReference.cache
+D:\ruanmou\online10\20171220Advanced10Course17DesignPattern\DesignPattern\ProxyPattern\bin\Debug\ProxyPattern.exe.config
+D:\ruanmou\online10\20171220Advanced10Course17DesignPattern\DesignPattern\ProxyPattern\bin\Debug\ProxyPattern.exe
+D:\ruanmou\online10\20171220Advanced10Course17DesignPattern\DesignPattern\ProxyPattern\bin\Debug\ProxyPattern.pdb
+D:\ruanmou\online10\20171220Advanced10Course17DesignPattern\DesignPattern\ProxyPattern\obj\Debug\ProxyPattern.csproj.CoreCompileInputs.cache
+D:\ruanmou\online10\20171220Advanced10Course17DesignPattern\DesignPattern\ProxyPattern\obj\Debug\ProxyPattern.exe
+D:\ruanmou\online10\20171220Advanced10Course17DesignPattern\DesignPattern\ProxyPattern\obj\Debug\ProxyPattern.pdb
+D:\ruanmou\online11\20180626Advanced11Course23DesignPattern\DesignPattern\ProxyPattern\bin\Debug\ProxyPattern.exe.config
+D:\ruanmou\online11\20180626Advanced11Course23DesignPattern\DesignPattern\ProxyPattern\bin\Debug\ProxyPattern.exe
+D:\ruanmou\online11\20180626Advanced11Course23DesignPattern\DesignPattern\ProxyPattern\bin\Debug\ProxyPattern.pdb
+D:\ruanmou\online11\20180626Advanced11Course23DesignPattern\DesignPattern\ProxyPattern\obj\Debug\ProxyPattern.csprojResolveAssemblyReference.cache
+D:\ruanmou\online11\20180626Advanced11Course23DesignPattern\DesignPattern\ProxyPattern\obj\Debug\ProxyPattern.csproj.CoreCompileInputs.cache
+D:\ruanmou\online11\20180626Advanced11Course23DesignPattern\DesignPattern\ProxyPattern\obj\Debug\ProxyPattern.exe
+D:\ruanmou\online11\20180626Advanced11Course23DesignPattern\DesignPattern\ProxyPattern\obj\Debug\ProxyPattern.pdb
+D:\ruanmou\online12\20190122Advanced12Course21DesignPattern\DesignPattern\ProxyPattern\bin\Debug\ProxyPattern.exe.config
+D:\ruanmou\online12\20190122Advanced12Course21DesignPattern\DesignPattern\ProxyPattern\bin\Debug\ProxyPattern.exe
+D:\ruanmou\online12\20190122Advanced12Course21DesignPattern\DesignPattern\ProxyPattern\bin\Debug\ProxyPattern.pdb
+D:\ruanmou\online12\20190122Advanced12Course21DesignPattern\DesignPattern\ProxyPattern\obj\Debug\ProxyPattern.csproj.CoreCompileInputs.cache
+D:\ruanmou\online12\20190122Advanced12Course21DesignPattern\DesignPattern\ProxyPattern\obj\Debug\ProxyPattern.exe
+D:\ruanmou\online12\20190122Advanced12Course21DesignPattern\DesignPattern\ProxyPattern\obj\Debug\ProxyPattern.pdb
+D:\ruanmou\online12\20190123Advanced12Course22DesignPattern\DesignPattern\ProxyPattern\bin\Debug\ProxyPattern.exe.config
+D:\ruanmou\online12\20190123Advanced12Course22DesignPattern\DesignPattern\ProxyPattern\bin\Debug\ProxyPattern.exe
+D:\ruanmou\online12\20190123Advanced12Course22DesignPattern\DesignPattern\ProxyPattern\bin\Debug\ProxyPattern.pdb
+D:\ruanmou\online12\20190123Advanced12Course22DesignPattern\DesignPattern\ProxyPattern\obj\Debug\ProxyPattern.csprojAssemblyReference.cache
+D:\ruanmou\online12\20190123Advanced12Course22DesignPattern\DesignPattern\ProxyPattern\obj\Debug\ProxyPattern.csproj.CoreCompileInputs.cache
+D:\ruanmou\online12\20190123Advanced12Course22DesignPattern\DesignPattern\ProxyPattern\obj\Debug\ProxyPattern.exe
+D:\ruanmou\online12\20190123Advanced12Course22DesignPattern\DesignPattern\ProxyPattern\obj\Debug\ProxyPattern.pdb

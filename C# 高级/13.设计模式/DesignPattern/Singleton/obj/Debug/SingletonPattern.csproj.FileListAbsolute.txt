@@ -1,0 +1,38 @@
+D:\ruanmou\online9\20170705Advanced9Course14DesignPatternPrinciple\DesignPattern\Singleton\bin\Debug\SingletonPattern.exe.config
+D:\ruanmou\online9\20170705Advanced9Course14DesignPatternPrinciple\DesignPattern\Singleton\bin\Debug\SingletonPattern.exe
+D:\ruanmou\online9\20170705Advanced9Course14DesignPatternPrinciple\DesignPattern\Singleton\bin\Debug\SingletonPattern.pdb
+D:\ruanmou\online9\20170705Advanced9Course14DesignPatternPrinciple\DesignPattern\Singleton\obj\Debug\SingletonPattern.exe
+D:\ruanmou\online9\20170705Advanced9Course14DesignPatternPrinciple\DesignPattern\Singleton\obj\Debug\SingletonPattern.pdb
+D:\ruanmou\online9\20170705Advanced9Course14DesignPatternPrinciple\DesignPattern\Singleton\obj\Debug\SingletonPattern.csprojResolveAssemblyReference.cache
+D:\ruanmou\online9\20170706Advanced9Course15DesignPattern\DesignPattern\Singleton\bin\Debug\SingletonPattern.exe.config
+D:\ruanmou\online9\20170706Advanced9Course15DesignPattern\DesignPattern\Singleton\bin\Debug\SingletonPattern.exe
+D:\ruanmou\online9\20170706Advanced9Course15DesignPattern\DesignPattern\Singleton\bin\Debug\SingletonPattern.pdb
+D:\ruanmou\online9\20170706Advanced9Course15DesignPattern\DesignPattern\Singleton\obj\Debug\SingletonPattern.exe
+D:\ruanmou\online9\20170706Advanced9Course15DesignPattern\DesignPattern\Singleton\obj\Debug\SingletonPattern.pdb
+D:\ruanmou\online10\20171220Advanced10Course17DesignPattern\DesignPattern\Singleton\bin\Debug\SingletonPattern.exe.config
+D:\ruanmou\online10\20171220Advanced10Course17DesignPattern\DesignPattern\Singleton\bin\Debug\SingletonPattern.exe
+D:\ruanmou\online10\20171220Advanced10Course17DesignPattern\DesignPattern\Singleton\bin\Debug\SingletonPattern.pdb
+D:\ruanmou\online10\20171220Advanced10Course17DesignPattern\DesignPattern\Singleton\obj\Debug\SingletonPattern.csproj.CoreCompileInputs.cache
+D:\ruanmou\online10\20171220Advanced10Course17DesignPattern\DesignPattern\Singleton\obj\Debug\SingletonPattern.exe
+D:\ruanmou\online10\20171220Advanced10Course17DesignPattern\DesignPattern\Singleton\obj\Debug\SingletonPattern.pdb
+D:\ruanmou\online11\20180626Advanced11Course23DesignPattern\DesignPattern\Singleton\bin\Debug\SingletonPattern.exe.config
+D:\ruanmou\online11\20180626Advanced11Course23DesignPattern\DesignPattern\Singleton\bin\Debug\SingletonPattern.exe
+D:\ruanmou\online11\20180626Advanced11Course23DesignPattern\DesignPattern\Singleton\bin\Debug\SingletonPattern.pdb
+D:\ruanmou\online11\20180626Advanced11Course23DesignPattern\DesignPattern\Singleton\obj\Debug\SingletonPattern.csprojResolveAssemblyReference.cache
+D:\ruanmou\online11\20180626Advanced11Course23DesignPattern\DesignPattern\Singleton\obj\Debug\SingletonPattern.csproj.CoreCompileInputs.cache
+D:\ruanmou\online11\20180626Advanced11Course23DesignPattern\DesignPattern\Singleton\obj\Debug\SingletonPattern.exe
+D:\ruanmou\online11\20180626Advanced11Course23DesignPattern\DesignPattern\Singleton\obj\Debug\SingletonPattern.pdb
+D:\ruanmou\online12\20190122Advanced12Course21DesignPattern\DesignPattern\Singleton\bin\Debug\SingletonPattern.exe.config
+D:\ruanmou\online12\20190122Advanced12Course21DesignPattern\DesignPattern\Singleton\bin\Debug\SingletonPattern.exe
+D:\ruanmou\online12\20190122Advanced12Course21DesignPattern\DesignPattern\Singleton\bin\Debug\SingletonPattern.pdb
+D:\ruanmou\online12\20190122Advanced12Course21DesignPattern\DesignPattern\Singleton\obj\Debug\SingletonPattern.csproj.CoreCompileInputs.cache
+D:\ruanmou\online12\20190122Advanced12Course21DesignPattern\DesignPattern\Singleton\obj\Debug\SingletonPattern.exe
+D:\ruanmou\online12\20190122Advanced12Course21DesignPattern\DesignPattern\Singleton\obj\Debug\SingletonPattern.pdb
+D:\ruanmou\online12\20190122Advanced12Course21DesignPattern\DesignPattern\Singleton\obj\Debug\SingletonPattern.csprojAssemblyReference.cache
+D:\Code\.Net Study\C# 高级\13.设计模式\DesignPattern\Singleton\bin\Debug\SingletonPattern.exe.config
+D:\Code\.Net Study\C# 高级\13.设计模式\DesignPattern\Singleton\bin\Debug\SingletonPattern.exe
+D:\Code\.Net Study\C# 高级\13.设计模式\DesignPattern\Singleton\bin\Debug\SingletonPattern.pdb
+D:\Code\.Net Study\C# 高级\13.设计模式\DesignPattern\Singleton\obj\Debug\SingletonPattern.csproj.AssemblyReference.cache
+D:\Code\.Net Study\C# 高级\13.设计模式\DesignPattern\Singleton\obj\Debug\SingletonPattern.csproj.CoreCompileInputs.cache
+D:\Code\.Net Study\C# 高级\13.设计模式\DesignPattern\Singleton\obj\Debug\SingletonPattern.exe
+D:\Code\.Net Study\C# 高级\13.设计模式\DesignPattern\Singleton\obj\Debug\SingletonPattern.pdb
