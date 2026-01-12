@@ -144,14 +144,16 @@ namespace AsyncThread
 
 
         #region btnAsyncAdvanced_Click
-        private void btnAsyncAdvanced_Click(object sender, EventArgs e)
+        private async void btnAsyncAdvanced_Click(object sender, EventArgs e)
         {
-            Console.WriteLine($"****************btnAsync_Click Start {Thread.CurrentThread.ManagedThreadId.ToString("00")} {DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff")}***************");
+            Console.WriteLine($"****************btnAsyncAdvanced_Click Start {Thread.CurrentThread.ManagedThreadId:00} {DateTime.Now:yyyy-MM-dd HH:mm:ss.fff}***************");
 
+            // 下面把原来基于 Delegate.BeginInvoke/EndInvoke 的示例全部用 Task/async-await/ContinueWith 重写，
+            // 并保留为注释形式以供对比学习（运行时不要使用 BeginInvoke，因为在 .NET Core/.NET 5+ 平台上不受支持）。
+
+            // 旧：通过委托 BeginInvoke 回调示例 (已移除)
             //Action<string> action = this.DoSomethingLong;
-
-            ////1 回调：将后续动作通过回调参数传递进去，子线程完成计算后，去调用这个回调委托
-            //IAsyncResult asyncResult = null;//是对异步调用操作的描述
+            //IAsyncResult asyncResult = null;
             //AsyncCallback callback = ar =>
             //{
             //    Console.WriteLine($"{object.ReferenceEquals(ar, asyncResult)}");
@@ -159,8 +161,22 @@ namespace AsyncThread
             //};
             //asyncResult = action.BeginInvoke("btnAsyncAdvanced_Click", callback, "花生");
 
-            //////2 通过IsComplate等待，卡界面--主线程在等待，边等待边提示
-            //////（ Thread.Sleep(200);位置变了，少了一句99.9999）
+            // 新（等价的 Task/回调 写法，注释以保留示例）：
+            //Action<string> action = this.DoSomethingLong;
+            //var t = Task.Run(() => action("btnAsyncAdvanced_Click"));
+            //t.ContinueWith(t2 =>
+            //{
+            //    if (t2.IsCompletedSuccessfully)
+            //    {
+            //        Console.WriteLine($"btnAsyncAdvanced_Click 计算成功（回调）. {Thread.CurrentThread.ManagedThreadId:00}");
+            //    }
+            //    else if (t2.IsFaulted)
+            //    {
+            //        Console.WriteLine($"子任务异常: {t2.Exception}");
+            //    }
+            //}, TaskScheduler.FromCurrentSynchronizationContext()); // 回到 UI 线程执行回调
+
+            ////// 旧：通过 IsCompleted 轮询等待（会卡界面示例，已注释）
             ////int i = 0;
             ////while (!asyncResult.IsCompleted)
             ////{
@@ -176,30 +192,224 @@ namespace AsyncThread
             ////}
             ////Console.WriteLine("中华民族复兴已完成，沉睡的东方雄狮已觉醒！");
 
-            ////3 WaitOne等待，即时等待  限时等待
-            ////asyncResult.AsyncWaitHandle.WaitOne();//直接等待任务完成
-            ////asyncResult.AsyncWaitHandle.WaitOne(-1);//一直等待任务完成
-            ////asyncResult.AsyncWaitHandle.WaitOne(1000);//最多等待1000ms，超时就不等了
+            // 新（不阻塞 UI 的轮询示例，注释保留）：
+            //var pollingTask = Task.Run(async () =>
+            //{
+            //    int i = 0;
+            //    while (!t.IsCompleted)
+            //    {
+            //        if (i < 9) Console.WriteLine($"完成{++i * 10}%....");
+            //        else Console.WriteLine($"完成99.999999%....");
+            //        await Task.Delay(200); // 不阻塞 UI 线程
+            //    }
+            //    Console.WriteLine("已完成");
+            //});
 
-            ////4 EndInvoke  即时等待,而且可以获取委托的返回值 一个异步操作只能End一次
-            ////action.EndInvoke(asyncResult);//等待某次异步调用操作结束
+            ////// 旧：使用 AsyncWaitHandle.WaitOne 等待（已注释）
+            ////asyncResult.AsyncWaitHandle.WaitOne();
+            ////asyncResult.AsyncWaitHandle.WaitOne(-1);
+            ////asyncResult.AsyncWaitHandle.WaitOne(1000);
 
-            ////Console.WriteLine("全部计算成功了。。");
+            // 新（替代等待/限时等待，注释保留）：
+            //var completed = await Task.WhenAny(t, Task.Delay(1000));
+            //if (completed == t) Console.WriteLine("任务在超时时间内完成");
+            //else Console.WriteLine("等待超时，未等到任务完成");
 
+            ////// 旧：EndInvoke 阻塞等待并获取返回值（已注释）
+            ////action.EndInvoke(asyncResult);
+
+            // 新（使用 await 获取返回值，注释保留）：
             Func<int> func = () =>
             {
                 Thread.Sleep(2000);
                 return DateTime.Now.Hour;
             };
-            int iResult = func.Invoke();//22
-            IAsyncResult asyncResult = func.BeginInvoke(ar =>
+            var task = Task.Run(func);
+            task.ContinueWith(t2 =>
             {
-                //int iEndResultIn = func.EndInvoke(ar);
-            }, null);
-            int iEndResult = func.EndInvoke(asyncResult);//22
+                if (t2.IsCompletedSuccessfully) Console.WriteLine($"回调（UI）结果: {t2.Result}");
+                else Console.WriteLine($"子任务异常: {t2.Exception}");
+            }, TaskScheduler.FromCurrentSynchronizationContext());
+            int result = await task; // await 取代 EndInvoke
 
-            Console.WriteLine($"****************btnAsync_Click End   {Thread.CurrentThread.ManagedThreadId.ToString("00")} {DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff")}***************");
+            // ------- 活动示例（使用 Task 替代 BeginInvoke/EndInvoke） -------
+            Func<int> funcActive = () =>
+            {
+                Thread.Sleep(2000);
+                return DateTime.Now.Hour;
+            };
+
+            // 保留同步调用示例（立即返回结果）
+            int iResult = funcActive.Invoke(); // 同步调用示例
+
+            // 异步启动任务，放到线程池执行
+            var runningTask = Task.Run(funcActive);
+
+            // 如果需要在子任务完成时在 UI 线程执行回调，使用 ContinueWith + FromCurrentSynchronizationContext
+            runningTask.ContinueWith(t =>
+            {
+                if (t.IsCompletedSuccessfully)
+                {
+                    Console.WriteLine($"回调（UI线程）结果: {t.Result}");
+                }
+                else if (t.IsFaulted)
+                {
+                    Console.WriteLine($"子任务异常: {t.Exception}");
+                }
+            }, TaskScheduler.FromCurrentSynchronizationContext());
+
+            // await 获取最终结果（替代 EndInvoke）
+            int iEndResult = await runningTask;
+
+            Console.WriteLine($"****************btnAsyncAdvanced_Click End   {Thread.CurrentThread.ManagedThreadId:00} {DateTime.Now:yyyy-MM-dd HH:mm:ss.fff} 结果:{iEndResult}***************");
         }
+        #endregion
+
+        #region Thread
+        /// <summary>
+        /// 多线程1.0
+        /// Thread:C#对线程对象的一个封装
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnThread_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine($"****************btnThread_Click Start {Thread.CurrentThread.ManagedThreadId.ToString("00")} {DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff")}***************");
+            //{
+            //    ParameterizedThreadStart method = o => this.DoSomethingLong("btnThread_Click");
+            //    Thread thread = new Thread(method);
+            //    thread.Start("123");//开启线程，执行委托的内容
+            //}
+            //{
+            //    ThreadStart method = () =>
+            //    {
+            //        Thread.Sleep(5000);
+            //        this.DoSomethingLong("btnThread_Click");
+            //        Thread.Sleep(5000);
+            //    };
+            //    Thread thread = new Thread(method);
+            //    thread.Start();//开启线程，执行委托的内容
+            //    //thread.Suspend();//暂停
+            //    //thread.Resume();//恢复    真的不该要的，暂停不一定马上暂停；让线程操作太复杂了
+            //    //thread.Abort();
+            //    ////线程是计算机资源，程序想停下线程，只能向操作系统通知(线程抛异常)，
+            //    ////会有延时/不一定能真的停下来
+            //    //Thread.ResetAbort();
+            //    //1等待
+            //    //while (thread.ThreadState != ThreadState.Stopped)
+            //    //{
+            //    //    Thread.Sleep(200);//当前线程休息200ms
+            //    //}
+            //    //2 Join等待
+            //    //thread.Join();//运行这句代码的线程，等待thread的完成
+            //    //thread.Join(1000);//最多等待1000ms
+
+            //    //Console.WriteLine("这里是线程执行完之后才操作。。。");
+
+            //    //thread.Priority = ThreadPriority.Highest;
+            //    ////最高优先级：优先执行，但不代表优先完成  甚至说极端情况下，还有意外发生，不能通过这个来控制线程的执行先后顺序
+            //    thread.IsBackground = false;//默认是false 前台线程，进程关闭，线程需要计算完后才退出
+            //    //thread.IsBackground = true;//关闭进程，线程退出
+            //}
+
+            //{
+            //    ThreadStart threadStart = () => this.DoSomethingLong("btnThread_Click");
+            //    Action actionCallBack = () =>
+            //      {
+            //          Thread.Sleep(2000);
+            //          Console.WriteLine($"This is Calllback {Thread.CurrentThread.ManagedThreadId.ToString("00")}");
+            //      };
+            //    this.ThreadWithCallBack(threadStart, actionCallBack);
+            //}
+            //{
+            //    Func<int> func = () =>
+            //        {
+            //            Thread.Sleep(5000);
+            //            return DateTime.Now.Year;
+            //        };
+            //    Func<int> funcThread = this.ThreadWithReturn(func);//非阻塞
+            //    Console.WriteLine("do something else/////");
+            //    Console.WriteLine("do something else/////");
+            //    Console.WriteLine("do something else/////");
+            //    Console.WriteLine("do something else/////");
+            //    Console.WriteLine("do something else/////");
+
+            //    int iResult = funcThread.Invoke();//阻塞
+            //}
+            {
+                //List<Thread> threads = new List<Thread>();
+                //for (int i = 0; i < 100; i++)
+                //{
+                //    if (threads.Count(t => t.ThreadState == ThreadState.Running) < 10)
+                //    {
+                //        Thread thread = new Thread(new ThreadStart(() => { }));
+                //        thread.Start();
+                //        threads.Add(thread);
+                //    }
+                //    else
+                //    {
+                //        Thread.Sleep(200);
+                //    }
+                //}
+            }
+            {
+                //问题：比如有10个任务，每个任务都启动一个线程，每个线程都需要执行一段时间，最用要等待10个线程都执行完成，然后触发另外一个任务将前10个任务执行的结果打包返回，这样的场景怎么处理
+                //启动10个thread---返回值保存到一个公开的集合(注意线程安全)---等待10个线程--都完成list就已经包含了全部结果
+            }
+            Console.WriteLine($"****************btnThread_Click End   {Thread.CurrentThread.ManagedThreadId.ToString("00")} {DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff")}***************");
+        }
+        //线程等待Join    回调？  获取返回值？
+
+        //基于thread封装一个回调
+        //回调：启动子线程执行动作A--不阻塞--A执行完后子线程会执行动作B
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="threadStart">多线程执行的操作</param>
+        /// <param name="actionCallback">线程完成后，回调的动作</param>
+        private void ThreadWithCallBack(ThreadStart threadStart, Action actionCallback)
+        {
+            //Thread thread = new Thread(threadStart);
+            //thread.Start();
+            //thread.Join();//错了，因为方法被阻塞了
+            //actionCallback.Invoke();
+
+            ThreadStart method = new ThreadStart(() =>
+            {
+                threadStart.Invoke();
+                actionCallback.Invoke();
+            });
+            new Thread(method).Start();
+        }
+
+        /// <summary>
+        /// 1 异步，非阻塞的
+        /// 2 还能获取到最终计算结果
+        /// 
+        /// 既要不阻塞，又要计算结果？不可能！
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="func"></param>
+        /// <returns></returns>
+        private Func<T> ThreadWithReturn<T>(Func<T> func)
+        {
+            T t = default(T);
+            ThreadStart threadStart = new ThreadStart(() =>
+            {
+                t = func.Invoke();
+            });
+            Thread thread = new Thread(threadStart);
+            thread.Start();
+
+            return new Func<T>(() =>
+            {
+                thread.Join();
+                //thread.ThreadState
+                return t;
+            });
+        }
+
+
         #endregion
     }
 }
