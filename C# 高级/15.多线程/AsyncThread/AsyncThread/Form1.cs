@@ -275,67 +275,67 @@ namespace AsyncThread
         private void btnThread_Click(object sender, EventArgs e)
         {
             Console.WriteLine($"****************btnThread_Click Start {Thread.CurrentThread.ManagedThreadId.ToString("00")} {DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff")}***************");
-            //{
-            //    ParameterizedThreadStart method = o => this.DoSomethingLong("btnThread_Click");
-            //    Thread thread = new Thread(method);
-            //    thread.Start("123");//开启线程，执行委托的内容
-            //}
-            //{
-            //    ThreadStart method = () =>
-            //    {
-            //        Thread.Sleep(5000);
-            //        this.DoSomethingLong("btnThread_Click");
-            //        Thread.Sleep(5000);
-            //    };
-            //    Thread thread = new Thread(method);
-            //    thread.Start();//开启线程，执行委托的内容
-            //    //thread.Suspend();//暂停
-            //    //thread.Resume();//恢复    真的不该要的，暂停不一定马上暂停；让线程操作太复杂了
-            //    //thread.Abort();
-            //    ////线程是计算机资源，程序想停下线程，只能向操作系统通知(线程抛异常)，
-            //    ////会有延时/不一定能真的停下来
-            //    //Thread.ResetAbort();
-            //    //1等待
-            //    //while (thread.ThreadState != ThreadState.Stopped)
-            //    //{
-            //    //    Thread.Sleep(200);//当前线程休息200ms
-            //    //}
-            //    //2 Join等待
-            //    //thread.Join();//运行这句代码的线程，等待thread的完成
-            //    //thread.Join(1000);//最多等待1000ms
+            {
+                ParameterizedThreadStart method = o => this.DoSomethingLong("btnThread_Click");
+                Thread thread = new Thread(method);
+                thread.Start("123");//开启线程，执行委托的内容
+            }
+            {
+                ThreadStart method = () =>
+                {
+                    Thread.Sleep(5000);
+                    this.DoSomethingLong("btnThread_Click");
+                    Thread.Sleep(5000);
+                };
+                Thread thread = new Thread(method);
+                thread.Start();//开启线程，执行委托的内容
+                //thread.Suspend();//暂停
+                //thread.Resume();//恢复    真的不该要的，暂停不一定马上暂停；让线程操作太复杂了
+                //thread.Abort();
+                ////线程是计算机资源，程序想停下线程，只能向操作系统通知(线程抛异常)，
+                ////会有延时/不一定能真的停下来
+                //Thread.ResetAbort();
+                //1等待
+                //while (thread.ThreadState != ThreadState.Stopped)
+                //{
+                //    Thread.Sleep(200);//当前线程休息200ms
+                //}
+                //2 Join等待
+                //thread.Join();//运行这句代码的线程，等待thread的完成
+                //thread.Join(1000);//最多等待1000ms
 
-            //    //Console.WriteLine("这里是线程执行完之后才操作。。。");
+                //Console.WriteLine("这里是线程执行完之后才操作。。。");
 
-            //    //thread.Priority = ThreadPriority.Highest;
-            //    ////最高优先级：优先执行，但不代表优先完成  甚至说极端情况下，还有意外发生，不能通过这个来控制线程的执行先后顺序
-            //    thread.IsBackground = false;//默认是false 前台线程，进程关闭，线程需要计算完后才退出
-            //    //thread.IsBackground = true;//关闭进程，线程退出
-            //}
+                //thread.Priority = ThreadPriority.Highest;
+                ////最高优先级：优先执行，但不代表优先完成  甚至说极端情况下，还有意外发生，不能通过这个来控制线程的执行先后顺序
+                thread.IsBackground = false;//默认是false 前台线程，进程关闭，线程需要计算完后才退出
+                //thread.IsBackground = true;//关闭进程，线程退出
+            }
 
-            //{
-            //    ThreadStart threadStart = () => this.DoSomethingLong("btnThread_Click");
-            //    Action actionCallBack = () =>
-            //      {
-            //          Thread.Sleep(2000);
-            //          Console.WriteLine($"This is Calllback {Thread.CurrentThread.ManagedThreadId.ToString("00")}");
-            //      };
-            //    this.ThreadWithCallBack(threadStart, actionCallBack);
-            //}
-            //{
-            //    Func<int> func = () =>
-            //        {
-            //            Thread.Sleep(5000);
-            //            return DateTime.Now.Year;
-            //        };
-            //    Func<int> funcThread = this.ThreadWithReturn(func);//非阻塞
-            //    Console.WriteLine("do something else/////");
-            //    Console.WriteLine("do something else/////");
-            //    Console.WriteLine("do something else/////");
-            //    Console.WriteLine("do something else/////");
-            //    Console.WriteLine("do something else/////");
+            {
+                ThreadStart threadStart = () => this.DoSomethingLong("btnThread_Click");
+                Action actionCallBack = () =>
+                  {
+                      Thread.Sleep(2000);
+                      Console.WriteLine($"This is Calllback {Thread.CurrentThread.ManagedThreadId.ToString("00")}");
+                  };
+                this.ThreadWithCallBack(threadStart, actionCallBack);
+            }
+            {
+                Func<int> func = () =>
+                    {
+                        Thread.Sleep(5000);
+                        return DateTime.Now.Year;
+                    };
+                Func<int> funcThread = this.ThreadWithReturn(func);//非阻塞
+                Console.WriteLine("do something else/////");
+                Console.WriteLine("do something else/////");
+                Console.WriteLine("do something else/////");
+                Console.WriteLine("do something else/////");
+                Console.WriteLine("do something else/////");
 
-            //    int iResult = funcThread.Invoke();//阻塞
-            //}
+                int iResult = funcThread.Invoke();//阻塞
+            }
             {
                 //List<Thread> threads = new List<Thread>();
                 //for (int i = 0; i < 100; i++)
@@ -382,6 +382,8 @@ namespace AsyncThread
             new Thread(method).Start();
         }
 
+
+
         /// <summary>
         /// 1 异步，非阻塞的
         /// 2 还能获取到最终计算结果
@@ -410,6 +412,97 @@ namespace AsyncThread
         }
 
 
+        #endregion
+
+        #region ThreadPool
+        /// <summary>
+        /// Thread--功能繁多，反而用不好--就像给4岁小孩一把热武器，反而会造成更大的伤害
+        /// 对线程数量是没有管控的
+        /// 
+        /// 线程池.NetFramework2.0
+        /// 如果某个对象创建和销毁代价比较高，同时这个对象还可以反复使用的，就需要一个池子
+        /// 保存多个这样的对象，需要用的时候从池子里面获取；用完之后不用销毁，放回池子；(享元模式)
+        /// 节约资源提升性能；此外，还能管控总数量，防止滥用；
+        /// 
+        /// ThreadPool的线程都是后台线程
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnThreadPool_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine($"****************btnThreadPool_Click Start {Thread.CurrentThread.ManagedThreadId.ToString("00")} {DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff")}***************");
+            {
+                //ThreadPool.QueueUserWorkItem(o => this.DoSomethingLong("btnThreadPool_Click1"));
+                //ThreadPool.QueueUserWorkItem(o => this.DoSomethingLong("btnThreadPool_Click2"), "昔梦");
+            }
+
+            {
+                //ThreadPool.GetMaxThreads(out int workerThreads, out int completionPortThreads);
+                //Console.WriteLine($"当前电脑最大workerThreads={workerThreads} 最大completionPortThreads={completionPortThreads}");
+
+                //ThreadPool.GetMinThreads(out int workerThreadsMin, out int completionPortThreadsMin);
+                //Console.WriteLine($"当前电脑最小workerThreads={workerThreadsMin} 最大completionPortThreads={completionPortThreadsMin}");
+
+                ////设置的线程池数量是进程全局的，
+                ////委托异步调用--Task--Parrallel--async/await 全部都是线程池的线程
+                ////直接new Thread不受这个数量限制的(但是会占用线程池的线程数量)
+                //ThreadPool.SetMaxThreads(8, 8);//设置的最大值，必须大于CPU核数，否则设置无效
+                //ThreadPool.SetMinThreads(2, 2);
+                //Console.WriteLine("&&&&&&&&&&&&&&&&&&&&&&&设置最大最小&&&&&&&&&&&&&&&&&&&&&&&&&&&");
+
+                //ThreadPool.GetMaxThreads(out int workerThreads1, out int completionPortThreads1);
+                //Console.WriteLine($"当前电脑最大workerThreads={workerThreads1} 最大completionPortThreads={completionPortThreads1}");
+
+                //ThreadPool.GetMinThreads(out int workerThreadsMin1, out int completionPortThreadsMin1);
+                //Console.WriteLine($"当前电脑最大workerThreads={workerThreadsMin1} 最大completionPortThreads={completionPortThreadsMin1}");
+            }
+
+            {
+                ////等待
+                //ManualResetEvent mre = new ManualResetEvent(false);
+                ////false---关闭---Set打开---true---WaitOne就能通过
+                ////true---打开--ReSet关闭---false--WaitOne就只能等待
+                //ThreadPool.QueueUserWorkItem(o =>
+                //{
+                //    this.DoSomethingLong("btnThreadPool_Click1");
+                //    mre.Set();
+                //});
+                //Console.WriteLine("Do Something else...");
+                //Console.WriteLine("Do Something else...");
+                //Console.WriteLine("Do Something else...");
+
+                //mre.WaitOne();
+                //Console.WriteLine("任务已经完成了。。。");
+            }
+            {
+                //不要阻塞线程池里面的线程
+                ThreadPool.SetMaxThreads(8, 8);
+                ManualResetEvent mre = new ManualResetEvent(false);
+                for (int i = 0; i < 10; i++)
+                {
+                    int k = i;
+                    ThreadPool.QueueUserWorkItem(t =>
+                    {
+                        Console.WriteLine($"{Thread.CurrentThread.ManagedThreadId.ToString("00")} show {k}");
+                        if (k == 9)
+                        {
+                            mre.Set();
+                        }
+                        else
+                        {
+                            mre.WaitOne();
+                        }
+                    });
+                }
+                if (mre.WaitOne())
+                {
+                    Console.WriteLine("任务全部执行成功！");
+                }
+            }
+
+            Console.WriteLine($"****************btnThreadPool_Click End   {Thread.CurrentThread.ManagedThreadId.ToString("00")} {DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff")}***************");
+        }
         #endregion
     }
 }
