@@ -504,5 +504,209 @@ namespace AsyncThread
             Console.WriteLine($"****************btnThreadPool_Click End   {Thread.CurrentThread.ManagedThreadId.ToString("00")} {DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff")}***************");
         }
         #endregion
+
+        #region btnTask_Click
+        /// <summary>
+        /// 1 Task：Waitall  WaitAny  Delay
+        /// 2 TaskFactory:ContinueWhenAny ContinueWhenAll 
+        /// 3 并行运算Parallel.Invoke/For/Foreach
+        /// 
+        /// Task是.NetFramework3.0出现的，线程是基于线程池，然后提供了丰富的API
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnTask_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine($"****************btnTask_Click Start {Thread.CurrentThread.ManagedThreadId.ToString("00")} {DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff")}***************");
+            {
+                Task task = new Task(() => this.DoSomethingLong("btnTask_Click_1"));
+                task.Start();
+            }
+            //{
+            //    Task task = Task.Run(() => this.DoSomethingLong("btnTask_Click_2"));
+            //}
+            //{
+            //    TaskFactory taskFactory = Task.Factory;
+            //    Task task = taskFactory.StartNew(() => this.DoSomethingLong("btnTask_Click_3"));
+            //}
+            //{
+            //    ThreadPool.SetMaxThreads(8, 8);
+            //    //线程池是单例的，全局唯一的
+            //    //设置后，同时并发的Task只有8个；而且线程是复用的；
+            //    //Task的线程是源于线程池
+            //    //全局的，请不要这样设置！！！
+            //    for (int i = 0; i < 100; i++)
+            //    {
+            //        int k = i;
+            //        Task.Run(() =>
+            //        {
+            //            Console.WriteLine($"This is {k} running ThreadId={Thread.CurrentThread.ManagedThreadId.ToString("00")}");
+            //            Thread.Sleep(2000);
+            //        });
+            //    }
+            //    //假如说我想控制下Task的并发数量，该怎么做？
+            //}
+            //{
+            //    {
+            //        Stopwatch stopwatch = new Stopwatch();
+            //        stopwatch.Start();
+            //        Console.WriteLine("在Sleep之前");
+            //        Thread.Sleep(2000);//同步等待--当前线程等待2s 然后继续
+            //        Console.WriteLine("在Sleep之后");
+            //        stopwatch.Stop();
+            //        Console.WriteLine($"Sleep耗时{stopwatch.ElapsedMilliseconds}");
+            //    }
+            //    {
+            //        Stopwatch stopwatch = new Stopwatch();
+            //        stopwatch.Start();
+            //        Console.WriteLine("在Delay之前");
+            //        Task task = Task.Delay(2000)
+            //            .ContinueWith(t =>
+            //            {
+            //                stopwatch.Stop();
+            //                Console.WriteLine($"Delay耗时{stopwatch.ElapsedMilliseconds}");
+
+            //                Console.WriteLine($"This is ThreadId={Thread.CurrentThread.ManagedThreadId.ToString ("00")}");
+            //            });//异步等待--等待2s后启动新任务
+            //        Console.WriteLine("在Delay之后");
+            //        //stopwatch.Stop();
+            //        //Console.WriteLine($"Delay耗时{stopwatch.ElapsedMilliseconds}");
+            //    }
+            //}
+            {
+                ////什么时候能用多线程？ 任务能并发的时候
+                ////多线程能干嘛？提升速度/优化用户体验
+                //Console.WriteLine("Eleven开启了一学期的课程");
+                //this.Teach("Lesson1");
+                //this.Teach("Lesson2");
+                //this.Teach("Lesson3");
+                ////不能并发，因为有严格顺序(只有Eleven讲课)
+                //Console.WriteLine("部署一下项目实战作业，需要多人合作完成");
+                ////开发可以多人合作---多线程--提升性能
+
+                //TaskFactory taskFactory = new TaskFactory();
+                //List<Task> taskList = new List<Task>();
+                //taskList.Add(taskFactory.StartNew(() => this.Coding("冰封的心", "Portal")));
+                //taskList.Add(taskFactory.StartNew(() => this.Coding("随心随缘", "  DBA ")));
+                //taskList.Add(taskFactory.StartNew(() => this.Coding("心如迷醉", "Client")));
+                //taskList.Add(taskFactory.StartNew(() => this.Coding(" 千年虫", "BackService")));
+                //taskList.Add(taskFactory.StartNew(() => this.Coding("简单生活", "Wechat")));
+
+                ////谁第一个完成，获取一个红包奖励
+                //taskFactory.ContinueWhenAny(taskList.ToArray(), t => Console.WriteLine($"XXX开发完成，获取个红包奖励{Thread.CurrentThread.ManagedThreadId.ToString("00")}"));
+                ////实战作业完成后，一起庆祝一下
+                //taskList.Add(taskFactory.ContinueWhenAll(taskList.ToArray(), rArray => Console.WriteLine($"开发都完成，一起庆祝一下{Thread.CurrentThread.ManagedThreadId.ToString("00")}")));
+                ////ContinueWhenAny  ContinueWhenAll 非阻塞式的回调；而且使用的线程可能是新线程，也可能是刚完成任务的线程，唯一不可能是主线程
+
+
+                ////阻塞当前线程，等着任意一个任务完成
+                //Task.WaitAny(taskList.ToArray());//也可以限时等待
+                //Console.WriteLine("Eleven准备环境开始部署");
+                ////需要能够等待全部线程完成任务再继续  阻塞当前线程，等着全部任务完成
+                //Task.WaitAll(taskList.ToArray());
+                //Console.WriteLine("5个模块全部完成后，Eleven集中点评");
+
+                ////Task.WaitAny  WaitAll都是阻塞当前线程，等任务完成后执行操作
+                ////阻塞卡界面，是为了并发以及顺序控制
+                ////网站首页：A数据库 B接口 C分布式服务 D搜索引擎，适合多线程并发，都完成后才能返回给用户，需要等待WaitAll
+                ////列表页：核心数据可能来自数据库/接口服务/分布式搜索引擎/缓存，多线程并发请求，哪个先完成就用哪个结果，其他的就不管了
+            }
+            {
+                //TaskFactory taskFactory = new TaskFactory();
+                //List<Task> taskList = new List<Task>();
+                //taskList.Add(taskFactory.StartNew(o => this.Coding("冰封的心", "Portal"), "冰封的心"));
+                //taskList.Add(taskFactory.StartNew(o => this.Coding("随心随缘", "  DBA "), "随心随缘"));
+                //taskList.Add(taskFactory.StartNew(o => this.Coding("心如迷醉", "Client"), "心如迷醉"));
+                //taskList.Add(taskFactory.StartNew(o => this.Coding(" 千年虫", "BackService"), " 千年虫"));
+                //taskList.Add(taskFactory.StartNew(o => this.Coding("简单生活", "Wechat"), "简单生活"));
+
+                ////谁第一个完成，获取一个红包奖励
+                //taskFactory.ContinueWhenAny(taskList.ToArray(), t => Console.WriteLine($"{t.AsyncState}开发完成，获取个红包奖励{Thread.CurrentThread.ManagedThreadId.ToString("00")}"));
+            }
+            {
+                //Task.Run(() => this.DoSomethingLong("btnTask_Click")).ContinueWith(t => Console.WriteLine($"btnTask_Click已完成{Thread.CurrentThread.ManagedThreadId.ToString("00")}"));//回调
+            }
+            {
+                //Task<int> result = Task.Run<int>(() =>
+                // {
+                //     Thread.Sleep(2000);
+                //     return DateTime.Now.Year;
+                // });
+                //int i = result.Result;//会阻塞
+            }
+            {
+                Task.Run<int>(() =>
+                {
+                    Thread.Sleep(2000);
+                    return DateTime.Now.Year;
+                }).ContinueWith(tInt =>
+                {
+                    int i = tInt.Result;
+                });
+                //Task.Run(() =>
+                //{
+                //    int i = result.Result;//会阻塞
+                //});
+
+            }
+            {
+                ////假如说我想控制下Task的并发数量，该怎么做？  20个
+                //List<Task> taskList = new List<Task>();
+                //for (int i = 0; i < 10000; i++)
+                //{
+                //    int k = i;
+                //    if (taskList.Count(t => t.Status != TaskStatus.RanToCompletion) >= 20)
+                //    {
+                //        Task.WaitAny(taskList.ToArray());
+                //        taskList = taskList.Where(t => t.Status != TaskStatus.RanToCompletion).ToList();
+                //    }
+                //    taskList.Add(Task.Run(() =>
+                //    {
+                //        Console.WriteLine($"This is {k} running ThreadId={Thread.CurrentThread.ManagedThreadId.ToString("00")}");
+                //        Thread.Sleep(2000);
+                //    }));
+                //}
+            }
+            {
+
+            }
+
+
+            Console.WriteLine($"****************btnTask_Click End   {Thread.CurrentThread.ManagedThreadId.ToString("00")} {DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff")}***************");
+        }
+        //几乎90%以上的多线程场景，以及顺序控制，以上的Task的方法就可以完成
+        //如果你的多线程场景太复杂搞不定，那么请梳理一下你的流程，简化一下
+        //建议最好不要线程嵌套线程，两层勉强能懂，三层hold不住的，更多只能求神
+
+        #region Private Method
+        private void Teach(string lesson)
+        {
+            Console.WriteLine($"{lesson}开始讲。。。");
+            //long lResult = 0;
+            //for (int i = 0; i < 1_000_000_000; i++)
+            //{
+            //    lResult += i;
+            //}
+            Console.WriteLine($"{lesson}讲完了。。。");
+        }
+        /// <summary>
+        /// 模拟Coding过程
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="projectName"></param>
+        private void Coding(string name, string projectName)
+        {
+            Console.WriteLine($"****************Coding Start  {name} {projectName}  {Thread.CurrentThread.ManagedThreadId.ToString("00")} {DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff")}***************");
+            long lResult = 0;
+            for (int i = 0; i < 1_000_000_000; i++)
+            {
+                lResult += i;
+            }
+
+            Console.WriteLine($"****************Coding   End  {name} {projectName} {Thread.CurrentThread.ManagedThreadId.ToString("00")} {DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff")} {lResult}***************");
+        }
+        #endregion
+
+        #endregion
     }
 }
