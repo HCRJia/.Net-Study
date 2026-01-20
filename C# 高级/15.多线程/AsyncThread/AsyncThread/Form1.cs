@@ -887,24 +887,24 @@ namespace AsyncThread
 
             #region 临时变量
             {
-                ////for (int i = 0; i < 5; i++)
-                ////{
-                ////    Task.Run(() =>
-                ////    {
-                ////        Console.WriteLine($"This is btnThreadCore_Click_{i} ThreadId={Thread.CurrentThread.ManagedThreadId.ToString("00")}");
-                ////    });
-                ////}
-                ////临时变量问题，线程是非阻塞的，延迟启动的；线程执行的时候，i已经是5了
-                ////k是闭包里面的变量，每次循环都有一个独立的k
-                ////5个k变量  1个i变量
                 //for (int i = 0; i < 5; i++)
                 //{
-                //    int k = i;
                 //    Task.Run(() =>
                 //    {
-                //        Console.WriteLine($"This is btnThreadCore_Click_{i}_{k} ThreadId={Thread.CurrentThread.ManagedThreadId.ToString("00")}");
+                //        Console.WriteLine($"This is btnThreadCore_Click_{i} ThreadId={Thread.CurrentThread.ManagedThreadId.ToString("00")}");
                 //    });
                 //}
+                //临时变量问题，线程是非阻塞的，延迟启动的；线程执行的时候，i已经是5了
+                //k是闭包里面的变量，每次循环都有一个独立的k
+                //5个k变量  1个i变量
+                for (int i = 0; i < 5; i++)
+                {
+                    int k = i;
+                    Task.Run(() =>
+                    {
+                        Console.WriteLine($"This is btnThreadCore_Click_{i}_{k} ThreadId={Thread.CurrentThread.ManagedThreadId.ToString("00")}");
+                    });
+                }
             }
             #endregion
 
