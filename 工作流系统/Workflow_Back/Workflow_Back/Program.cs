@@ -1,6 +1,13 @@
+using Workflow_Back.CommonResults;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddControllers(options =>
+{
+    // 1°¢≈‰÷√CommonResultFilter
+    options.Filters.Add<CommonResultFilter>();
+});
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

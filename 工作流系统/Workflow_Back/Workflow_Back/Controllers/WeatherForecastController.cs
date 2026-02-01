@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Workflow_Back.CommonResults;
 
 namespace Workflow_Back.Controllers
 {
@@ -18,7 +19,7 @@ namespace Workflow_Back.Controllers
             _logger = logger;
         }
 
-        [HttpGet(Name = "GetWeatherForecast")]
+        [HttpGet("Get")]
         public IEnumerable<WeatherForecast> Get()
         {
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
@@ -30,10 +31,16 @@ namespace Workflow_Back.Controllers
             .ToArray();
         }
 
-        [HttpGet(Name = "GetIActionResult")]
-        public IEnumerable<IActionResult> GetIActionResult()
+        [HttpGet("GetIActionResult1")]
+        public CommonResult GetIActionResult1()
         {
-            return null;
+            CommonResult result = new CommonResult()
+            {
+                ErrorNo = "0",
+                ErrorInfo = "成功",
+                Result = "这是一个IActionResult返回值的示例"
+            };
+            return result;
         }
     }
 }

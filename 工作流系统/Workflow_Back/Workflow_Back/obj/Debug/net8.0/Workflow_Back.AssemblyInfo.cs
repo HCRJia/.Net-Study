@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Workflow_Back")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e1150b318719d32c7d2cd8a0de5cb24469806a73")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+eaf5ff5d17874a4752332d0a6ef120cd93d278e9")]
 [assembly: System.Reflection.AssemblyProductAttribute("Workflow_Back")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Workflow_Back")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
