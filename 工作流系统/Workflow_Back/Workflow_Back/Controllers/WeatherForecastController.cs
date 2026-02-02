@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
+using Workflow_Back.CommonExceptions;
 using Workflow_Back.CommonResults;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Workflow_Back.Controllers
 {
@@ -41,6 +43,17 @@ namespace Workflow_Back.Controllers
                 Result = "这是一个IActionResult返回值的示例"
             };
             return result;
+        }
+
+        [HttpGet("GetImplementedException")]
+        public void GetImplementedException()
+        {
+            CommonException exception = new()
+            {
+                ErrorNo = "1",
+                ErrorInfo = "这是一个已实现的异常示例"
+            };
+            throw exception;
         }
     }
 }

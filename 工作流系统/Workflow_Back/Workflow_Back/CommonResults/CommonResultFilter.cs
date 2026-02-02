@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
+using Workflow_Back.CommonExceptions;
 
 namespace Workflow_Back.CommonResults
 {
@@ -9,77 +10,53 @@ namespace Workflow_Back.CommonResults
     public class CommonResultFilter : IAsyncResultFilter
     {
         /// <summary>
-        /// 1、实现结果包装
+        /// 通用异常包装
         /// </summary>
-        /// <param name="context"></param>
-        /// <param name="next"></param>
-        /// <returns></returns>
-        /// <exception cref="NotImplementedException"></exception>
-        public async Task OnResultExecutionAsync(ResultExecutingContext context,
-            ResultExecutionDelegate next)
+        public class CommonExceptionFilter : IExceptionFilter
         {
-            // 1、获取Action结果
-            IActionResult actionResult = context.Result;
-
-            // 2、判断Action结果类型 ObjectResult
-            if (actionResult is ObjectResult objectResult)
+            /// <summary>
+            /// 1、实现通用异常包装
+            /// </summary>
+            /// <param name="context"></param>
+            /// <exception cref="NotImplementedException"></exception>
+            public void OnException(ExceptionContext context)
             {
-                // 2.1、获取结果值
-                object result = objectResult.Value;
+                // 1、获取异常
+                Exception exception = context.Exception;
 
-                // 2.1.1、结果值判断
-                if (result is CommonResult common)
+                // 1.1、异常判断
+                if (exception is CommonException common)
                 {
-                    // 2.3、结果返回
-                    context.Result = new JsonResult(common);
+                    // 1.1.1、通用异常结果包装
+                    CommonExceptionResult commonExceptionResult = new CommonExceptionResult();
+                    commonExceptionResult.ErrorNo = common.ErrorNo;
+                    commonExceptionResult.ErrorInfo = common.ErrorInfo;
+                    commonExceptionResult.ErrorReason = common.StackTrace;
+
+                    // 1.1.2、通用异常结果返回
+                    context.Result = new JsonResult(commonExceptionResult);
                 }
                 else
                 {
-                    // 2.2、结果包装
-                    CommonResult commonResult = new CommonResult();
-                    commonResult.ErrorNo = "0";
-                    commonResult.Result = result;
+                    // 2、异常包装
+                    CommonException commonException = new CommonException();
+                    commonException.ErrorNo = "-1"; // 异常状态
+                    commonException.ErrorInfo = exception.Message;
+                    //commonException.ErrorReason = exception.StackTrace;
 
-                    // 2.3、结果返回
-                    context.Result = new JsonResult(commonResult);
+                    // 3、异常包装返回
+                    context.Exception = commonException;
+
+                    // 4、通用异常结果包装
+                    CommonExceptionResult commonExceptionResult = new CommonExceptionResult();
+                    commonExceptionResult.ErrorNo = commonException.ErrorNo;
+                    commonExceptionResult.ErrorInfo = commonException.ErrorInfo;
+                    commonExceptionResult.ErrorReason = commonException.StackTrace;
+
+                    // 5、通用异常结果返回
+                    context.Result = new JsonResult(commonExceptionResult);
                 }
-            }
-            // 3、判断Action结果类型 EmptyResult
-            else if (actionResult is EmptyResult emptyResult)
-            {
-                //3.1、空结果包装
-                CommonResult commonResult = new CommonResult();
-                commonResult.ErrorNo = "0";
-                commonResult.Result = "无结果";
 
-                // 3.2 、结果返回
-                context.Result = new JsonResult(commonResult);
             }
-            // 4、判断Action结果类型 JsonResult
-            else if (actionResult is JsonResult jsonResult)
-            {
-                // 4.1、JsonResult包装
-                CommonResult commonResult = new CommonResult();
-                commonResult.ErrorNo = "0";
-                commonResult.Result = jsonResult.Value; // Json值
-
-                // 4.2、结果返回
-                context.Result = new JsonResult(commonResult);
-            }
-            // 5、判断Action结果类型 StatusCodeResult
-            else if (actionResult is StatusCodeResult statusCodeResult)
-            {
-                // 4.1、StatusCodeResult包装
-                CommonResult commonResult = new CommonResult();
-                commonResult.ErrorNo = "0";
-                commonResult.Result = statusCodeResult.StatusCode; // 状态码
-
-                // 4.2、结果返回
-                context.Result = new JsonResult(commonResult);
-            }
-
-            // 3、下一个过滤器
-            await next();
         }
     }
-}

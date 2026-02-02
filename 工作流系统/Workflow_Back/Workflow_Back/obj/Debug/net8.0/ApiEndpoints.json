@@ -2,7 +2,7 @@
   {
     "ContainingType": "Workflow_Back.Controllers.WeatherForecastController",
     "Method": "Get",
-    "RelativePath": "WeatherForecast",
+    "RelativePath": "WeatherForecast/Get",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -17,8 +17,7 @@
         ],
         "StatusCode": 200
       }
-    ],
-    "EndpointName": "Get"
+    ]
   },
   {
     "ContainingType": "Workflow_Back.Controllers.WeatherForecastController",
@@ -30,12 +29,28 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[Microsoft.AspNetCore.Mvc.IActionResult, Microsoft.AspNetCore.Mvc.Abstractions, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60]]",
+        "Type": "Workflow_Back.CommonResults.CommonResult",
         "MediaTypes": [
           "text/plain",
           "application/json",
           "text/json"
         ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Workflow_Back.Controllers.WeatherForecastController",
+    "Method": "GetImplementedException",
+    "RelativePath": "WeatherForecast/GetImplementedException",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
         "StatusCode": 200
       }
     ]
