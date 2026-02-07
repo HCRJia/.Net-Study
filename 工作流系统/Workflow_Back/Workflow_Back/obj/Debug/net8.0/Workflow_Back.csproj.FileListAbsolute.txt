@@ -34,3 +34,9 @@ D:\Code\.Net Study\工作流系统\Workflow_Back\Workflow_Back\obj\Debug\net8.0\
 D:\Code\.Net Study\工作流系统\Workflow_Back\Workflow_Back\obj\Debug\net8.0\Workflow_Back.pdb
 D:\Code\.Net Study\工作流系统\Workflow_Back\Workflow_Back\obj\Debug\net8.0\Workflow_Back.genruntimeconfig.cache
 D:\Code\.Net Study\工作流系统\Workflow_Back\Workflow_Back\obj\Debug\net8.0\ref\Workflow_Back.dll
+D:\Code\.Net Study\工作流系统\Workflow_Back\Workflow_Back\bin\Debug\net8.0\Workflow_CommonController.deps.json
+D:\Code\.Net Study\工作流系统\Workflow_Back\Workflow_Back\bin\Debug\net8.0\Workflow_CommonController.runtimeconfig.json
+D:\Code\.Net Study\工作流系统\Workflow_Back\Workflow_Back\bin\Debug\net8.0\Workflow_CommonController.staticwebassets.endpoints.json
+D:\Code\.Net Study\工作流系统\Workflow_Back\Workflow_Back\bin\Debug\net8.0\Workflow_CommonController.exe
+D:\Code\.Net Study\工作流系统\Workflow_Back\Workflow_Back\bin\Debug\net8.0\Workflow_CommonController.dll
+D:\Code\.Net Study\工作流系统\Workflow_Back\Workflow_Back\bin\Debug\net8.0\Workflow_CommonController.pdb
