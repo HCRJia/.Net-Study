@@ -1,3 +1,6 @@
 D:\Code\.Net Study\工作流系统\Workflow_Back\Workflow_CommonController\obj\Debug\net8.0\staticwebassets.build.json
 D:\Code\.Net Study\工作流系统\Workflow_Back\Workflow_CommonController\obj\Debug\net8.0\staticwebassets.build.json
 D:\Code\.Net Study\工作流系统\Workflow_Back\Workflow_CommonController\obj\Debug\net8.0\staticwebassets.build.json
+D:\Code\.Net Study\工作流系统\Workflow_Back\Workflow_CommonController\obj\Debug\net8.0\staticwebassets.build.json
+D:\Code\.Net Study\工作流系统\Workflow_Back\Workflow_CommonController\obj\Debug\net8.0\staticwebassets.build.json
+D:\Code\.Net Study\工作流系统\Workflow_Back\Workflow_CommonController\obj\Debug\net8.0\staticwebassets.build.json

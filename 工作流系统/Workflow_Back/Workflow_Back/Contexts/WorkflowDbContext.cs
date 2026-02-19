@@ -1,7 +1,6 @@
 ﻿using JadeFramework.Dapper.DbContext;
 using JadeFramework.Dapper.SqlGenerator;
 using MySql.Data.MySqlClient;
-using System.Data.SqlClient;
 using Workflow_Back.Repositorise;
 
 namespace Workflow_Back.Contexts
@@ -26,6 +25,8 @@ namespace Workflow_Back.Contexts
         /// 实现用户仓储
         /// </summary>
         public IUserRepository userRepository => new UserRepository(Connection, sqlGeneratorConfig);
+
+        public IRoleRepository roleRepository => new RoleRepository(Connection, sqlGeneratorConfig);
 
     }
 }

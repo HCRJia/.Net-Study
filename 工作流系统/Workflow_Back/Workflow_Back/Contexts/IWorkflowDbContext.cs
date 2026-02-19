@@ -7,5 +7,8 @@ namespace Workflow_Back.Contexts
     {
         //1、依赖IUserRepository
         public IUserRepository userRepository { get; }
+
+        //2、依赖RoleRepository
+        public IRoleRepository roleRepository { get; }
     }
 }
