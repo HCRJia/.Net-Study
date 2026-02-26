@@ -1,34 +1,51 @@
-﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Workflow_Back.CommonControllers;
+using Workflow_Back.Models;
+using Workflow_Back.Services;
 
 namespace Workflow_Back.Controllers
 {
-    [ApiController]
+    /// <summary>
+    /// 控制器
+    /// </summary>
     [Route("[controller]")]
-    public class WorkFlowController : CommonController<WorkFlowController>
+    [ApiController]
+    public class WorkflowController : CommonController<WorkflowController>
     {
-        private static readonly string[] Summaries = new[]
-        {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
+        /// <summary>
+        /// Service
+        /// </summary>
+        private IWorkflowService _WorkflowService;   
 
-        public WorkFlowController(ILogger<WorkFlowController> logger) : base(logger)
+        public WorkflowController(ILogger<WorkflowController> logger,
+                                IWorkflowService WorkflowService) : 
+            base(logger)
         {
+            _WorkflowService = WorkflowService;
         }
 
-        [HttpGet(Name = "WorkFlow")]
-        public IEnumerable<WeatherForecast> Get()
+        /// <summary>
+        /// 查询Id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpGet("{id}")]
+        public async Task<Workflow> Get(int id)
         {
-            // 1、通用控制器使用
-            _logger.LogInformation("通用控制器日志");
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-            {
-                Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-                TemperatureC = Random.Shared.Next(-20, 55),
-                Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-            })
-            .ToArray();
+            // 1、查询
+           return await _WorkflowService.GetAsync(id);
+        }
+
+        /// <summary>
+        /// 添加
+        /// </summary>
+        /// <param name="value"></param>
+
+        [HttpPost]
+        public async Task<bool> Post(Workflow Workflow)
+        {
+            // 1、添加
+            return await _WorkflowService.AddAsync(Workflow);
         }
     }
 }

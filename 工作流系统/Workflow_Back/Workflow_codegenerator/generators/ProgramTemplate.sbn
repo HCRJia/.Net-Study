@@ -1,0 +1,48 @@
+﻿using Workflow_Back.CommonControllersExtensions;
+using Workflow_Back.CommonExceptions;
+using Workflow_Back.CommonResults;
+using Workflow_Back.Contexts;
+using Workflow_Back.Fixtrues;
+using Workflow_Back.Services;
+
+namespace Workflow_Back
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            var builder = WebApplication.CreateBuilder(args);
+
+            // 1、使用CommonController模块
+            builder.Services.AddCommonControllers();
+
+            // 2、实现配置 Services 和 Fixtrues
+            builder.Services.AddScoped(typeof(WorkflowFixtrue));
+
+            {{- for entitys in entities }}
+             builder.Services.AddScoped<I{{entitys.name}}Service, {{entitys.name}}Service>();
+            {{- end }}
+
+            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+            builder.Services.AddEndpointsApiExplorer();
+            builder.Services.AddSwaggerGen();
+
+            var app = builder.Build();
+
+            // Configure the HTTP request pipeline.
+            if (app.Environment.IsDevelopment())
+            {
+                app.UseSwagger();
+                app.UseSwaggerUI();
+            }
+
+            app.UseHttpsRedirection();
+
+            app.UseAuthorization();
+
+            app.MapControllers();
+
+            app.Run();
+        }
+    }
+}

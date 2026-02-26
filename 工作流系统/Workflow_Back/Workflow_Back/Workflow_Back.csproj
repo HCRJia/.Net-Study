@@ -17,4 +17,9 @@
     <ProjectReference Include="..\Workflow_CommonController\Workflow_CommonController.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Repositorises\IRepositorises\" />
+    <Folder Include="Services\IServices\" />
+  </ItemGroup>
+
 </Project>

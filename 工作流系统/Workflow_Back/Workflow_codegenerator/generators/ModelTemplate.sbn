@@ -1,0 +1,43 @@
+﻿using JadeFramework.Core.Dapper;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Workflow_Back.Models
+{
+    /// <summary>
+    /// {{comment}}
+    /// </summary>
+    [Table("{{tablename}}")]
+    public class {{name}}
+    {
+    {{- for propertity in propertities }}
+        {{- if propertity.name =="Id" }}
+        /// <summary>
+        /// {{propertity.comment}}
+        /// </summary>
+        [Key,Identity]
+        public {{propertity.type}} {{propertity.name}} { get; set; }
+        {{- else }}
+        /// <summary>
+        /// {{propertity.comment}}
+        /// </summary>
+        public {{propertity.type}} {{propertity.name}} { get; set; }
+        {{- end }}
+    {{- end }}
+    }
+
+    /// <summary>
+    /// {{comment}}-{{comment}}表映射
+    /// </summary>
+    public sealed class {{name}}Mapper : ClassMapper<{{name}}>
+    {
+        public {{name}}Mapper()
+        {
+            // 1、映射到{{tablename}}
+            Table("{{tablename}}");
+
+            // 2、自动映射【字段和属性】
+            AutoMap();
+        }
+    }
+}

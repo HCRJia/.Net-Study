@@ -1,10 +1,13 @@
-﻿using JadeFramework.Dapper;
+using JadeFramework.Dapper;
 using JadeFramework.Dapper.SqlGenerator;
 using System.Data;
 using Workflow_Back.Models;
 
-namespace Workflow_Back.Repositorise
+namespace Workflow_Back.Repositorys
 {
+    /// <summary>
+    /// 仓储实现
+    /// </summary>
     public class RoleRepository : DapperRepository<Role>, IRoleRepository
     {
         /// <summary>
@@ -13,7 +16,7 @@ namespace Workflow_Back.Repositorise
         /// </summary>
         /// <param name="connection"></param>
         /// <param name="config"></param>
-        public RoleRepository(IDbConnection connection,
+        public RoleRepository(IDbConnection connection, 
             SqlGeneratorConfig config) : base(connection, config)
         {
         }

@@ -1,0 +1,24 @@
+﻿using Workflow_Back.Models;
+
+namespace Workflow_Back.Services
+{
+    /// <summary>
+    /// {{comment}}Service接口
+    /// </summary>
+    public interface I{{name}}Service
+    {
+        /// <summary>
+        /// 获取{{comment}}信息
+        /// </summary>
+        /// <param name="Id">{{comment}}ID</param>
+        /// <returns></returns>
+        public Task<{{name}}> GetAsync(int Id);
+
+        /// <summary>
+        /// 新增{{comment}}
+        /// </summary>
+        /// <param name="{{name}}"></param>
+        /// <returns></returns>
+        public Task<bool> AddAsync({{name}} {{name}});
+    }
+}

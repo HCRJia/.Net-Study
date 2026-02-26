@@ -1,51 +1,51 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using Workflow_Back.CommonControllers;
 using Workflow_Back.Models;
-using Workflow_Back.Service;
+using Workflow_Back.Services;
 
 namespace Workflow_Back.Controllers
 {
     /// <summary>
-    /// 用户控制器
+    /// 控制器
     /// </summary>
     [Route("[controller]")]
     [ApiController]
     public class UserController : CommonController<UserController>
     {
         /// <summary>
-        /// 用户Service
+        /// Service
         /// </summary>
-        private IUserService _userService;
+        private IUserService _UserService;   
 
         public UserController(ILogger<UserController> logger,
-                                IUserService userService) :
+                                IUserService UserService) : 
             base(logger)
         {
-            _userService = userService;
+            _UserService = UserService;
         }
 
         /// <summary>
-        /// 查询用户Id
+        /// 查询Id
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpGet("{id}")]
         public async Task<User> Get(int id)
         {
-            // 1、查询用户
-            return await _userService.GetAsync(id);
+            // 1、查询
+           return await _UserService.GetAsync(id);
         }
 
         /// <summary>
-        /// 添加用户
+        /// 添加
         /// </summary>
         /// <param name="value"></param>
 
         [HttpPost]
-        public async Task<bool> Post(User user)
+        public async Task<bool> Post(User User)
         {
-            // 1、添加用户
-            return await _userService.AddAsync(user);
+            // 1、添加
+            return await _UserService.AddAsync(User);
         }
     }
 }

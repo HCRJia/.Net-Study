@@ -5,6 +5,446 @@
     "version": "1.0"
   },
   "paths": {
+    "/Dept/{id}": {
+      "get": {
+        "tags": [
+          "Dept"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Dept"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Dept"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Dept"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Dept": {
+      "post": {
+        "tags": [
+          "Dept"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Dept"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Dept"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Dept"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Resource/{id}": {
+      "get": {
+        "tags": [
+          "Resource"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Resource"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Resource"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Resource"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Resource": {
+      "post": {
+        "tags": [
+          "Resource"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Resource"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Resource"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Resource"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Role/{id}": {
+      "get": {
+        "tags": [
+          "Role"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Role"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Role"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Role"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Role": {
+      "post": {
+        "tags": [
+          "Role"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Role"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Role"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Role"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/RoleResource/{id}": {
+      "get": {
+        "tags": [
+          "RoleResource"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/RoleResource"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RoleResource"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RoleResource"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/RoleResource": {
+      "post": {
+        "tags": [
+          "RoleResource"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RoleResource"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RoleResource"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RoleResource"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/System/{id}": {
+      "get": {
+        "tags": [
+          "System"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Systems"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Systems"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Systems"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/System": {
+      "post": {
+        "tags": [
+          "System"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Systems"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Systems"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Systems"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/User/{id}": {
       "get": {
         "tags": [
@@ -93,10 +533,21 @@
         }
       }
     },
-    "/WeatherForecast/Get": {
+    "/UserDept/{id}": {
       "get": {
         "tags": [
-          "WeatherForecast"
+          "UserDept"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
         ],
         "responses": {
           "200": {
@@ -104,26 +555,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/WeatherForecast"
-                  }
+                  "$ref": "#/components/schemas/UserDept"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/WeatherForecast"
-                  }
+                  "$ref": "#/components/schemas/UserDept"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/WeatherForecast"
-                  }
+                  "$ref": "#/components/schemas/UserDept"
                 }
               }
             }
@@ -131,28 +573,47 @@
         }
       }
     },
-    "/WeatherForecast/GetIActionResult1": {
-      "get": {
+    "/UserDept": {
+      "post": {
         "tags": [
-          "WeatherForecast"
+          "UserDept"
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserDept"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserDept"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserDept"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "OK",
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/CommonResult"
+                  "type": "boolean"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CommonResult"
+                  "type": "boolean"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CommonResult"
+                  "type": "boolean"
                 }
               }
             }
@@ -160,50 +621,1055 @@
         }
       }
     },
-    "/WeatherForecast/GetImplementedException": {
+    "/UserRole/{id}": {
       "get": {
         "tags": [
-          "WeatherForecast"
+          "UserRole"
         ],
-        "responses": {
-          "200": {
-            "description": "OK"
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
           }
-        }
-      }
-    },
-    "/WorkFlow": {
-      "get": {
-        "tags": [
-          "WorkFlow"
         ],
-        "operationId": "WorkFlow",
         "responses": {
           "200": {
             "description": "OK",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/WeatherForecast"
-                  }
+                  "$ref": "#/components/schemas/UserRole"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/WeatherForecast"
-                  }
+                  "$ref": "#/components/schemas/UserRole"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/WeatherForecast"
-                  }
+                  "$ref": "#/components/schemas/UserRole"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/UserRole": {
+      "post": {
+        "tags": [
+          "UserRole"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserRole"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserRole"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserRole"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Workflow/{id}": {
+      "get": {
+        "tags": [
+          "Workflow"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Workflow"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Workflow"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Workflow"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Workflow": {
+      "post": {
+        "tags": [
+          "Workflow"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Workflow"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Workflow"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Workflow"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/WorkflowAssign/{id}": {
+      "get": {
+        "tags": [
+          "WorkflowAssign"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/WorkflowAssign"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WorkflowAssign"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WorkflowAssign"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/WorkflowAssign": {
+      "post": {
+        "tags": [
+          "WorkflowAssign"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WorkflowAssign"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WorkflowAssign"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/WorkflowAssign"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/WorkflowCategory/{id}": {
+      "get": {
+        "tags": [
+          "WorkflowCategory"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/WorkflowCategory"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WorkflowCategory"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WorkflowCategory"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/WorkflowCategory": {
+      "post": {
+        "tags": [
+          "WorkflowCategory"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WorkflowCategory"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WorkflowCategory"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/WorkflowCategory"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/WorkflowForm/{id}": {
+      "get": {
+        "tags": [
+          "WorkflowForm"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/WorkflowForm"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WorkflowForm"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WorkflowForm"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/WorkflowForm": {
+      "post": {
+        "tags": [
+          "WorkflowForm"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WorkflowForm"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WorkflowForm"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/WorkflowForm"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/WorkflowInstance/{id}": {
+      "get": {
+        "tags": [
+          "WorkflowInstance"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/WorkflowInstance"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WorkflowInstance"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WorkflowInstance"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/WorkflowInstance": {
+      "post": {
+        "tags": [
+          "WorkflowInstance"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WorkflowInstance"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WorkflowInstance"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/WorkflowInstance"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/WorkflowInstanceForm/{id}": {
+      "get": {
+        "tags": [
+          "WorkflowInstanceForm"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/WorkflowInstanceForm"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WorkflowInstanceForm"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WorkflowInstanceForm"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/WorkflowInstanceForm": {
+      "post": {
+        "tags": [
+          "WorkflowInstanceForm"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WorkflowInstanceForm"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WorkflowInstanceForm"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/WorkflowInstanceForm"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/WorkflowNotice/{id}": {
+      "get": {
+        "tags": [
+          "WorkflowNotice"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/WorkflowNotice"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WorkflowNotice"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WorkflowNotice"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/WorkflowNotice": {
+      "post": {
+        "tags": [
+          "WorkflowNotice"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WorkflowNotice"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WorkflowNotice"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/WorkflowNotice"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/WorkflowOperationHistory/{id}": {
+      "get": {
+        "tags": [
+          "WorkflowOperationHistory"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/WorkflowOperationHistory"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WorkflowOperationHistory"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WorkflowOperationHistory"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/WorkflowOperationHistory": {
+      "post": {
+        "tags": [
+          "WorkflowOperationHistory"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WorkflowOperationHistory"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WorkflowOperationHistory"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/WorkflowOperationHistory"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Workflowsql/{id}": {
+      "get": {
+        "tags": [
+          "Workflowsql"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Workflowsql"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Workflowsql"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Workflowsql"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Workflowsql": {
+      "post": {
+        "tags": [
+          "Workflowsql"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Workflowsql"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Workflowsql"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Workflowsql"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/WorkflowTransitionHistory/{id}": {
+      "get": {
+        "tags": [
+          "WorkflowTransitionHistory"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/WorkflowTransitionHistory"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WorkflowTransitionHistory"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WorkflowTransitionHistory"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/WorkflowTransitionHistory": {
+      "post": {
+        "tags": [
+          "WorkflowTransitionHistory"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WorkflowTransitionHistory"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WorkflowTransitionHistory"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/WorkflowTransitionHistory"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/WorkflowUrge/{id}": {
+      "get": {
+        "tags": [
+          "WorkflowUrge"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/WorkflowUrge"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WorkflowUrge"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WorkflowUrge"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/WorkflowUrge": {
+      "post": {
+        "tags": [
+          "WorkflowUrge"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WorkflowUrge"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WorkflowUrge"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/WorkflowUrge"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "boolean"
                 }
               }
             }
@@ -214,19 +1680,217 @@
   },
   "components": {
     "schemas": {
-      "CommonResult": {
+      "Dept": {
         "type": "object",
         "properties": {
-          "ErrorNo": {
+          "DeptId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "SystemId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "DeptName": {
             "type": "string",
             "nullable": true
           },
-          "ErrorInfo": {
+          "DeptCode": {
             "type": "string",
             "nullable": true
           },
-          "Result": {
+          "ParentId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "Path": {
+            "type": "string",
             "nullable": true
+          },
+          "IsDel": {
+            "type": "boolean"
+          },
+          "Memo": {
+            "type": "string",
+            "nullable": true
+          },
+          "CreateUserId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "CreateTime": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Resource": {
+        "type": "object",
+        "properties": {
+          "ResourceId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "SystemId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "ResourceName": {
+            "type": "string",
+            "nullable": true
+          },
+          "ParentId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "ResourceUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "Sort": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ButtonClass": {
+            "type": "string",
+            "nullable": true
+          },
+          "Icon": {
+            "type": "string",
+            "nullable": true
+          },
+          "IsShow": {
+            "type": "boolean"
+          },
+          "CreateUserId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "CreateTime": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "IsDel": {
+            "type": "boolean"
+          },
+          "Memo": {
+            "type": "string",
+            "nullable": true
+          },
+          "IsButton": {
+            "type": "boolean"
+          },
+          "ButtonType": {
+            "type": "boolean"
+          },
+          "Path": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Role": {
+        "type": "object",
+        "properties": {
+          "RoleId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "SystemId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "RoleName": {
+            "type": "string",
+            "nullable": true
+          },
+          "Memo": {
+            "type": "string",
+            "nullable": true
+          },
+          "IsDel": {
+            "type": "boolean"
+          },
+          "CreateUserId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "CreateTime": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "UpdateUserId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "UpdateTime": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "additionalProperties": false
+      },
+      "RoleResource": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "RoleId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "ResourceId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "CreateTime": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Systems": {
+        "type": "object",
+        "properties": {
+          "SystemId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "SystemName": {
+            "type": "string",
+            "nullable": true
+          },
+          "SystemCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "IsDel": {
+            "type": "boolean"
+          },
+          "Memo": {
+            "type": "string",
+            "nullable": true
+          },
+          "Sort": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "CreateTime": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "CreateUserId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "UpdateTime": {
+            "type": "integer",
+            "format": "int64"
           }
         },
         "additionalProperties": false
@@ -234,40 +1898,530 @@
       "User": {
         "type": "object",
         "properties": {
-          "Id": {
+          "UserId": {
             "type": "integer",
-            "format": "int32"
+            "format": "int64"
+          },
+          "SystemId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "Account": {
+            "type": "string",
+            "nullable": true
           },
           "UserName": {
+            "type": "string",
+            "nullable": true
+          },
+          "JobNumber": {
             "type": "string",
             "nullable": true
           },
           "Password": {
             "type": "string",
             "nullable": true
+          },
+          "HeadImg": {
+            "type": "string",
+            "nullable": true
+          },
+          "IsDel": {
+            "type": "boolean"
+          },
+          "CreateUserId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "CreateTime": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "UpdateUserId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "UpdateTime": {
+            "type": "integer",
+            "format": "int64"
           }
         },
         "additionalProperties": false
       },
-      "WeatherForecast": {
+      "UserDept": {
         "type": "object",
         "properties": {
-          "Date": {
-            "type": "string",
-            "format": "date"
+          "Id": {
+            "type": "integer",
+            "format": "int64"
           },
-          "TemperatureC": {
+          "UserId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "DeptId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "CreateTime": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UserRole": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "UserId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "RoleId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "CreateTime": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Workflow": {
+        "type": "object",
+        "properties": {
+          "FlowId": {
+            "type": "string",
+            "nullable": true
+          },
+          "FlowCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "CategoryId": {
+            "type": "string",
+            "nullable": true
+          },
+          "FormId": {
+            "type": "string",
+            "nullable": true
+          },
+          "FlowName": {
+            "type": "string",
+            "nullable": true
+          },
+          "FlowContent": {
+            "type": "string",
+            "nullable": true
+          },
+          "FlowVersion": {
             "type": "integer",
             "format": "int32"
           },
-          "TemperatureF": {
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          },
-          "Summary": {
+          "Memo": {
             "type": "string",
             "nullable": true
+          },
+          "Enable": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "IsOld": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "WorkflowAssign": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "string",
+            "nullable": true
+          },
+          "FlowId": {
+            "type": "string",
+            "nullable": true
+          },
+          "InstanceId": {
+            "type": "string",
+            "nullable": true
+          },
+          "NodeId": {
+            "type": "string",
+            "nullable": true
+          },
+          "NodeName": {
+            "type": "string",
+            "nullable": true
+          },
+          "UserId": {
+            "type": "string",
+            "nullable": true
+          },
+          "UserName": {
+            "type": "string",
+            "nullable": true
+          },
+          "AssignUserId": {
+            "type": "string",
+            "nullable": true
+          },
+          "AssignUserName": {
+            "type": "string",
+            "nullable": true
+          },
+          "Content": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "WorkflowCategory": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "string",
+            "nullable": true
+          },
+          "Name": {
+            "type": "string",
+            "nullable": true
+          },
+          "ParentId": {
+            "type": "string",
+            "nullable": true
+          },
+          "Memo": {
+            "type": "string",
+            "nullable": true
+          },
+          "Status": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "WorkflowForm": {
+        "type": "object",
+        "properties": {
+          "FormId": {
+            "type": "string",
+            "nullable": true
+          },
+          "FormName": {
+            "type": "string",
+            "nullable": true
+          },
+          "FormType": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Content": {
+            "type": "string",
+            "nullable": true
+          },
+          "OriginalContent": {
+            "type": "string",
+            "nullable": true
+          },
+          "FormUrl": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "WorkflowInstance": {
+        "type": "object",
+        "properties": {
+          "InstanceId": {
+            "type": "string",
+            "nullable": true
+          },
+          "FlowId": {
+            "type": "string",
+            "nullable": true
+          },
+          "Code": {
+            "type": "string",
+            "nullable": true
+          },
+          "ActivityId": {
+            "type": "string",
+            "nullable": true
+          },
+          "ActivityType": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ActivityName": {
+            "type": "string",
+            "nullable": true
+          },
+          "PreviousId": {
+            "type": "string",
+            "nullable": true
+          },
+          "MakerList": {
+            "type": "string",
+            "nullable": true
+          },
+          "FlowContent": {
+            "type": "string",
+            "nullable": true
+          },
+          "FlowVersion": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "CreateUserName": {
+            "type": "string",
+            "nullable": true
+          },
+          "UpdateTime": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "additionalProperties": false
+      },
+      "WorkflowInstanceForm": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "string",
+            "nullable": true
+          },
+          "InstanceId": {
+            "type": "string",
+            "nullable": true
+          },
+          "FormId": {
+            "type": "string",
+            "nullable": true
+          },
+          "FlowContent": {
+            "type": "string",
+            "nullable": true
+          },
+          "FormType": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "FormUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "FormData": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "WorkflowNotice": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "string",
+            "nullable": true
+          },
+          "InstanceId": {
+            "type": "string",
+            "nullable": true
+          },
+          "NodeId": {
+            "type": "string",
+            "nullable": true
+          },
+          "NodeName": {
+            "type": "string",
+            "nullable": true
+          },
+          "Maker": {
+            "type": "string",
+            "nullable": true
+          },
+          "IsTransition": {
+            "type": "boolean"
+          },
+          "Status": {
+            "type": "boolean"
+          },
+          "IsRead": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "WorkflowOperationHistory": {
+        "type": "object",
+        "properties": {
+          "OperationId": {
+            "type": "string",
+            "nullable": true
+          },
+          "InstanceId": {
+            "type": "string",
+            "nullable": true
+          },
+          "NodeId": {
+            "type": "string",
+            "nullable": true
+          },
+          "NodeName": {
+            "type": "string",
+            "nullable": true
+          },
+          "TransitionType": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Content": {
+            "type": "string",
+            "nullable": true
+          },
+          "CreateUserName": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "WorkflowTransitionHistory": {
+        "type": "object",
+        "properties": {
+          "TransitionId": {
+            "type": "string",
+            "nullable": true
+          },
+          "InstanceId": {
+            "type": "string",
+            "nullable": true
+          },
+          "FromNodeId": {
+            "type": "string",
+            "nullable": true
+          },
+          "FromNodeType": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "FromNodName": {
+            "type": "string",
+            "nullable": true
+          },
+          "ToNodeId": {
+            "type": "string",
+            "nullable": true
+          },
+          "ToNodeType": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ToNodeName": {
+            "type": "string",
+            "nullable": true
+          },
+          "TransitionState": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "IsFinish": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "CreateUserName": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "WorkflowUrge": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "string",
+            "nullable": true
+          },
+          "InstanceId": {
+            "type": "string",
+            "nullable": true
+          },
+          "NodeId": {
+            "type": "string",
+            "nullable": true
+          },
+          "NodeName": {
+            "type": "string",
+            "nullable": true
+          },
+          "Sender": {
+            "type": "string",
+            "nullable": true
+          },
+          "UrgeUser": {
+            "type": "string",
+            "nullable": true
+          },
+          "UrgeType": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "UrgeContent": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Workflowsql": {
+        "type": "object",
+        "properties": {
+          "Name": {
+            "type": "string",
+            "nullable": true
+          },
+          "FlowId": {
+            "type": "string",
+            "nullable": true
+          },
+          "FlowSQL": {
+            "type": "string",
+            "nullable": true
+          },
+          "Param": {
+            "type": "string",
+            "nullable": true
+          },
+          "SQLType": {
+            "type": "boolean"
+          },
+          "Status": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Remark": {
+            "type": "string",
+            "nullable": true
+          },
+          "CreateUserId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "CreateTime": {
+            "type": "integer",
+            "format": "int64"
           }
         },
         "additionalProperties": false

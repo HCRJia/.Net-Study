@@ -1,0 +1,6 @@
+@Workflow_codegenerator_HostAddress = http://localhost:5167
+
+GET {{Workflow_codegenerator_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
