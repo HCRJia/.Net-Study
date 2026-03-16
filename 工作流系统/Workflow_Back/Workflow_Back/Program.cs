@@ -1,7 +1,11 @@
+using AutoMapper;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.Extensions.DependencyInjection;
 using Workflow_Back.CommonControllersExtensions;
 using Workflow_Back.CommonExceptions;
 using Workflow_Back.CommonResults;
 using Workflow_Back.Contexts;
+using Workflow_Back.Dtos;
 using Workflow_Back.Fixtrues;
 using Workflow_Back.Services;
 
@@ -18,26 +22,36 @@ namespace Workflow_Back
 
             // 2、实现配置 Services 和 Fixtrues
             builder.Services.AddScoped(typeof(WorkflowFixtrue));
-             builder.Services.AddScoped<IDeptService, DeptService>();
-             builder.Services.AddScoped<IResourceService, ResourceService>();
-             builder.Services.AddScoped<IRoleService, RoleService>();
-             builder.Services.AddScoped<IRoleResourceService, RoleResourceService>();
-             builder.Services.AddScoped<ISystemService, SystemService>();
-             builder.Services.AddScoped<IUserService, UserService>();
-             builder.Services.AddScoped<IUserDeptService, UserDeptService>();
-             builder.Services.AddScoped<IUserRoleService, UserRoleService>();
-             builder.Services.AddScoped<IWorkflowService, WorkflowService>();
-             builder.Services.AddScoped<IWorkflowAssignService, WorkflowAssignService>();
-             builder.Services.AddScoped<IWorkflowCategoryService, WorkflowCategoryService>();
-             builder.Services.AddScoped<IWorkflowFormService, WorkflowFormService>();
-             builder.Services.AddScoped<IWorkflowInstanceService, WorkflowInstanceService>();
-             builder.Services.AddScoped<IWorkflowInstanceFormService, WorkflowInstanceFormService>();
-             builder.Services.AddScoped<IWorkflowNoticeService, WorkflowNoticeService>();
-             builder.Services.AddScoped<IWorkflowOperationHistoryService, WorkflowOperationHistoryService>();
-             builder.Services.AddScoped<IWorkflowTransitionHistoryService, WorkflowTransitionHistoryService>();
-             builder.Services.AddScoped<IWorkflowUrgeService, WorkflowUrgeService>();
-             builder.Services.AddScoped<IWorkflowsqlService, WorkflowsqlService>();
+            builder.Services.AddScoped<IDeptService, DeptService>();
+            builder.Services.AddScoped<IResourceService, ResourceService>();
+            builder.Services.AddScoped<IRoleService, RoleService>();
+            builder.Services.AddScoped<IRoleResourceService, RoleResourceService>();
+            builder.Services.AddScoped<ISystemService, SystemService>();
+            builder.Services.AddScoped<IUserService, UserService>();
+            builder.Services.AddScoped<IUserDeptService, UserDeptService>();
+            builder.Services.AddScoped<IUserRoleService, UserRoleService>();
+            builder.Services.AddScoped<IWorkflowService, WorkflowService>();
+            builder.Services.AddScoped<IWorkflowAssignService, WorkflowAssignService>();
+            builder.Services.AddScoped<IWorkflowCategoryService, WorkflowCategoryService>();
+            builder.Services.AddScoped<IWorkflowFormService, WorkflowFormService>();
+            builder.Services.AddScoped<IWorkflowInstanceService, WorkflowInstanceService>();
+            builder.Services.AddScoped<IWorkflowInstanceFormService, WorkflowInstanceFormService>();
+            builder.Services.AddScoped<IWorkflowNoticeService, WorkflowNoticeService>();
+            builder.Services.AddScoped<IWorkflowOperationHistoryService, WorkflowOperationHistoryService>();
+            builder.Services.AddScoped<IWorkflowTransitionHistoryService, WorkflowTransitionHistoryService>();
+            builder.Services.AddScoped<IWorkflowUrgeService, WorkflowUrgeService>();
+            builder.Services.AddScoped<IWorkflowsqlService, WorkflowsqlService>();
 
+            // 2、cookie身份认证
+            builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+            .AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, options =>
+            {
+                options.LoginPath = new PathString("/Sys/User/Login");
+                options.AccessDeniedPath = new PathString("/Error/NoAuth");
+                options.LogoutPath = new PathString("/Sys/User/LogOut");
+                options.ExpireTimeSpan = TimeSpan.FromHours(2);
+            });
+            builder.Services.AddAutoMapper(cfg => { cfg.AddProfile<MappingProfile>(); });
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();

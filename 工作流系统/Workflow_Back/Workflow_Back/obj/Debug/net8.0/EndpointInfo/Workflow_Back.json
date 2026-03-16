@@ -494,41 +494,24 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/UserCreateDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/UserCreateDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/UserCreateDto"
               }
             }
           }
         },
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "boolean"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "type": "boolean"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "type": "boolean"
-                }
-              }
-            }
+            "description": "OK"
           }
         }
       }
@@ -1906,6 +1889,51 @@
             "type": "integer",
             "format": "int64"
           },
+          "Account": {
+            "type": "string",
+            "nullable": true
+          },
+          "UserName": {
+            "type": "string",
+            "nullable": true
+          },
+          "JobNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "Password": {
+            "type": "string",
+            "nullable": true
+          },
+          "HeadImg": {
+            "type": "string",
+            "nullable": true
+          },
+          "IsDel": {
+            "type": "boolean"
+          },
+          "CreateUserId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "CreateTime": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "UpdateUserId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "UpdateTime": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UserCreateDto": {
+        "type": "object",
+        "properties": {
           "Account": {
             "type": "string",
             "nullable": true

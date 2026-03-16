@@ -261,26 +261,22 @@
   },
   {
     "ContainingType": "Workflow_Back.Controllers.UserController",
-    "Method": "Post",
+    "Method": "CreateUser",
     "RelativePath": "User",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "User",
-        "Type": "Workflow_Back.Models.User",
+        "Name": "userCreateDto",
+        "Type": "Workflow_Back.Dtos.UserCreateDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Boolean",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
+        "Type": "System.Void",
+        "MediaTypes": [],
         "StatusCode": 200
       }
     ]

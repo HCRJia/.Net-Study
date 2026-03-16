@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Workflow_Back.CommonControllers;
+using Workflow_Back.Dtos;
 using Workflow_Back.Models;
 using Workflow_Back.Services;
 
@@ -41,11 +42,22 @@ namespace Workflow_Back.Controllers
         /// </summary>
         /// <param name="value"></param>
 
+        //[HttpPost]
+        //public async Task<bool> Post(User User)
+        //{
+        //    // 1、添加
+        //    return await _UserService.AddAsync(User);
+        //}
+
+        /// <summary>
+        /// 创建用户
+        /// </summary>
+        /// <param name="userCreateDto"></param>
+        /// <returns></returns>
         [HttpPost]
-        public async Task<bool> Post(User User)
+        public async Task CreateUser(UserCreateDto userCreateDto)
         {
-            // 1、添加
-            return await _UserService.AddAsync(User);
+            _UserService.CreateUserAsync(userCreateDto);
         }
     }
 }

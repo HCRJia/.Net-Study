@@ -11,6 +11,7 @@
     <PackageReference Include="JadeFramework.WorkFlow" Version="2.0.0.1" />
     <PackageReference Include="MySql.Data" Version="9.6.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+    <PackageReference Include="SyrianBallaS.AutoMapper.Extensions.Microsoft.DependencyInjection.Signed" Version="3.2.0" />
   </ItemGroup>
 
   <ItemGroup>

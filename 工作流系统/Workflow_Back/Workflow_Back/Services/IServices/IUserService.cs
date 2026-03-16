@@ -1,3 +1,4 @@
+using Workflow_Back.Dtos;
 using Workflow_Back.Models;
 
 namespace Workflow_Back.Services
@@ -8,17 +9,19 @@ namespace Workflow_Back.Services
     public interface IUserService
     {
         /// <summary>
-        /// 获取信息
+        /// 获取用户模型信息
         /// </summary>
-        /// <param name="Id">ID</param>
+        /// <param name="Id">用户模型ID</param>
         /// <returns></returns>
         public Task<User> GetAsync(int Id);
 
         /// <summary>
-        /// 新增
+        /// 新增用户模型
         /// </summary>
         /// <param name="User"></param>
         /// <returns></returns>
         public Task<bool> AddAsync(User User);
+
+        public Task<bool> CreateUserAsync(UserCreateDto userCreateDto);
     }
 }

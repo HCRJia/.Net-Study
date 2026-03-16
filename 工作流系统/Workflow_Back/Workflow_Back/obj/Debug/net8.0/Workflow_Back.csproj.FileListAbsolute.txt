@@ -70,3 +70,7 @@ D:\Code\.Net Study\工作流系统\Workflow_Back\Workflow_Back\bin\Debug\net8.0\
 D:\Code\.Net Study\工作流系统\Workflow_Back\Workflow_Back\bin\Debug\net8.0\runtimes\win-x64\native\krb5_64.dll
 D:\Code\.Net Study\工作流系统\Workflow_Back\Workflow_Back\bin\Debug\net8.0\runtimes\win-x64\native\krbcc64.dll
 D:\Code\.Net Study\工作流系统\Workflow_Back\Workflow_Back\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Windows.Extensions.dll
+D:\Code\.Net Study\工作流系统\Workflow_Back\Workflow_Back\bin\Debug\net8.0\AutoMapper.dll
+D:\Code\.Net Study\工作流系统\Workflow_Back\Workflow_Back\bin\Debug\net8.0\Microsoft.DotNet.PlatformAbstractions.dll
+D:\Code\.Net Study\工作流系统\Workflow_Back\Workflow_Back\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
+D:\Code\.Net Study\工作流系统\Workflow_Back\Workflow_Back\bin\Debug\net8.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
