@@ -42,16 +42,14 @@ namespace Workflow_Back
             builder.Services.AddScoped<IWorkflowUrgeService, WorkflowUrgeService>();
             builder.Services.AddScoped<IWorkflowsqlService, WorkflowsqlService>();
 
-            // 2、cookie身份认证
+            builder.Services.AddAutoMapper(cfg => { cfg.AddProfile<MappingProfile>(); });
+
+            // 4、配置身份认证Authentication
             builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
             .AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, options =>
             {
-                options.LoginPath = new PathString("/Sys/User/Login");
-                options.AccessDeniedPath = new PathString("/Error/NoAuth");
-                options.LogoutPath = new PathString("/Sys/User/LogOut");
-                options.ExpireTimeSpan = TimeSpan.FromHours(2);
+                options.ExpireTimeSpan = TimeSpan.FromHours(2); // 2小时过期【固定】
             });
-            builder.Services.AddAutoMapper(cfg => { cfg.AddProfile<MappingProfile>(); });
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
@@ -66,6 +64,9 @@ namespace Workflow_Back
             }
 
             app.UseHttpsRedirection();
+
+            // 4.1、配置身份认证Authentication中间件
+            app.UseAuthentication();
 
             app.UseAuthorization();
 
