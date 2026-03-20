@@ -6,14 +6,14 @@ using Workflow_Back.Services;
 namespace Workflow_Back.Controllers
 {
     /// <summary>
-    /// 控制器
+    /// 流程流转历史模型控制器
     /// </summary>
     [Route("[controller]")]
     [ApiController]
     public class WorkflowTransitionHistoryController : CommonController<WorkflowTransitionHistoryController>
     {
         /// <summary>
-        /// Service
+        /// 流程流转历史模型Service
         /// </summary>
         private IWorkflowTransitionHistoryService _WorkflowTransitionHistoryService;   
 
@@ -25,26 +25,26 @@ namespace Workflow_Back.Controllers
         }
 
         /// <summary>
-        /// 查询Id
+        /// 查询流程流转历史模型Id
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpGet("{id}")]
         public async Task<WorkflowTransitionHistory> Get(int id)
         {
-            // 1、查询
+            // 1、查询流程流转历史模型
            return await _WorkflowTransitionHistoryService.GetAsync(id);
         }
 
         /// <summary>
-        /// 添加
+        /// 添加流程流转历史模型
         /// </summary>
         /// <param name="value"></param>
 
         [HttpPost]
         public async Task<bool> Post(WorkflowTransitionHistory WorkflowTransitionHistory)
         {
-            // 1、添加
+            // 1、添加流程流转历史模型
             return await _WorkflowTransitionHistoryService.AddAsync(WorkflowTransitionHistory);
         }
     }

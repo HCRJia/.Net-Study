@@ -6,14 +6,14 @@ using Workflow_Back.Services;
 namespace Workflow_Back.Controllers
 {
     /// <summary>
-    /// 控制器
+    /// 用户部门关联模型控制器
     /// </summary>
     [Route("[controller]")]
     [ApiController]
     public class UserDeptController : CommonController<UserDeptController>
     {
         /// <summary>
-        /// Service
+        /// 用户部门关联模型Service
         /// </summary>
         private IUserDeptService _UserDeptService;   
 
@@ -25,26 +25,26 @@ namespace Workflow_Back.Controllers
         }
 
         /// <summary>
-        /// 查询Id
+        /// 查询用户部门关联模型Id
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpGet("{id}")]
         public async Task<UserDept> Get(int id)
         {
-            // 1、查询
+            // 1、查询用户部门关联模型
            return await _UserDeptService.GetAsync(id);
         }
 
         /// <summary>
-        /// 添加
+        /// 添加用户部门关联模型
         /// </summary>
         /// <param name="value"></param>
 
         [HttpPost]
         public async Task<bool> Post(UserDept UserDept)
         {
-            // 1、添加
+            // 1、添加用户部门关联模型
             return await _UserDeptService.AddAsync(UserDept);
         }
     }

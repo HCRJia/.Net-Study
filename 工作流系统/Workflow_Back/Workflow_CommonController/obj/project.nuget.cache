@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "dNJzNaLXZVs=",
+  "dgSpecHash": "11Y67sH95I8=",
   "success": true,
   "projectFilePath": "D:\\Code\\.Net Study\\工作流系统\\Workflow_Back\\Workflow_CommonController\\Workflow_CommonController.csproj",
   "expectedPackageFiles": [
@@ -12,6 +12,7 @@
     "C:\\Users\\cdk\\.nuget\\packages\\microsoft.extensions.primitives\\8.0.0\\microsoft.extensions.primitives.8.0.0.nupkg.sha512",
     "C:\\Users\\cdk\\.nuget\\packages\\microsoft.net.http.headers\\2.3.8\\microsoft.net.http.headers.2.3.8.nupkg.sha512",
     "C:\\Users\\cdk\\.nuget\\packages\\microsoft.openapi\\1.6.14\\microsoft.openapi.1.6.14.nupkg.sha512",
+    "C:\\Users\\cdk\\.nuget\\packages\\newtonsoft.json\\8.0.1\\newtonsoft.json.8.0.1.nupkg.sha512",
     "C:\\Users\\cdk\\.nuget\\packages\\swashbuckle.aspnetcore\\6.6.2\\swashbuckle.aspnetcore.6.6.2.nupkg.sha512",
     "C:\\Users\\cdk\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.6.2\\swashbuckle.aspnetcore.swagger.6.6.2.nupkg.sha512",
     "C:\\Users\\cdk\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.6.2\\swashbuckle.aspnetcore.swaggergen.6.6.2.nupkg.sha512",
@@ -19,5 +20,30 @@
     "C:\\Users\\cdk\\.nuget\\packages\\system.buffers\\4.6.0\\system.buffers.4.6.0.nupkg.sha512",
     "C:\\Users\\cdk\\.nuget\\packages\\system.text.encodings.web\\8.0.0\\system.text.encodings.web.8.0.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "message": "包 \"Newtonsoft.Json\" 8.0.1 具有已知的 高 严重性漏洞，https://github.com/advisories/GHSA-5crp-9r3c-p9vr",
+      "projectPath": "D:\\Code\\.Net Study\\工作流系统\\Workflow_Back\\Workflow_CommonController\\Workflow_CommonController.csproj",
+      "warningLevel": 1,
+      "filePath": "D:\\Code\\.Net Study\\工作流系统\\Workflow_Back\\Workflow_CommonController\\Workflow_CommonController.csproj",
+      "libraryId": "Newtonsoft.Json",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "message": "已使用“.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1”而不是项目目标框架“net8.0”还原包“Newtonsoft.Json 8.0.1”。此包可能与项目不完全兼容。",
+      "projectPath": "D:\\Code\\.Net Study\\工作流系统\\Workflow_Back\\Workflow_CommonController\\Workflow_CommonController.csproj",
+      "warningLevel": 1,
+      "filePath": "D:\\Code\\.Net Study\\工作流系统\\Workflow_Back\\Workflow_CommonController\\Workflow_CommonController.csproj",
+      "libraryId": "Newtonsoft.Json",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
 }

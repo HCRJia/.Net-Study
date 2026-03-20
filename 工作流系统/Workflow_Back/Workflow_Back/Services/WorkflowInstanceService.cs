@@ -5,7 +5,7 @@ using Workflow_Back.Models;
 namespace Workflow_Back.Services
 {
     /// <summary>
-    /// Service接口
+    /// 流程实例模型【根据流程运行流程】Service接口
     /// </summary>
     public class WorkflowInstanceService : IWorkflowInstanceService
     {
@@ -21,13 +21,13 @@ namespace Workflow_Back.Services
 
         public async Task<WorkflowInstance> GetAsync(int Id)
         {
-            //1、查询数据
-            return await _workflowFixtrue.db._WorkflowInstanceRepository.FindByIdAsync(Id);
+            //1、查询流程实例模型【根据流程运行流程】数据
+            return await _workflowFixtrue.db.WorkflowInstances.FindByIdAsync(Id);
         }
 
         public async Task<bool> AddAsync(WorkflowInstance WorkflowInstance)
         {
-            return await _workflowFixtrue.db._WorkflowInstanceRepository.InsertAsync(WorkflowInstance);
+            return await _workflowFixtrue.db.WorkflowInstances.InsertAsync(WorkflowInstance);
         }
     }
 }

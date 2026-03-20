@@ -6,14 +6,14 @@ using Workflow_Back.Services;
 namespace Workflow_Back.Controllers
 {
     /// <summary>
-    /// 控制器
+    /// 流程表单模型控制器
     /// </summary>
     [Route("[controller]")]
     [ApiController]
     public class WorkflowFormController : CommonController<WorkflowFormController>
     {
         /// <summary>
-        /// Service
+        /// 流程表单模型Service
         /// </summary>
         private IWorkflowFormService _WorkflowFormService;   
 
@@ -25,26 +25,26 @@ namespace Workflow_Back.Controllers
         }
 
         /// <summary>
-        /// 查询Id
+        /// 查询流程表单模型Id
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpGet("{id}")]
         public async Task<WorkflowForm> Get(int id)
         {
-            // 1、查询
+            // 1、查询流程表单模型
            return await _WorkflowFormService.GetAsync(id);
         }
 
         /// <summary>
-        /// 添加
+        /// 添加流程表单模型
         /// </summary>
         /// <param name="value"></param>
 
         [HttpPost]
         public async Task<bool> Post(WorkflowForm WorkflowForm)
         {
-            // 1、添加
+            // 1、添加流程表单模型
             return await _WorkflowFormService.AddAsync(WorkflowForm);
         }
     }

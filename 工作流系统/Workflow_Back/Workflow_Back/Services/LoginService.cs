@@ -1,6 +1,9 @@
 using AutoMapper;
 using JadeFramework.Core.Extensions;
 using JadeFramework.Core.Security;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Newtonsoft.Json;
+using System.Security.Claims;
 using Workflow_Back.CommonExceptions;
 using Workflow_Back.Contexts;
 using Workflow_Back.Dtos;
@@ -10,7 +13,7 @@ using Workflow_Back.Models;
 namespace Workflow_Back.Services
 {
     /// <summary>
-    /// Service接口
+    /// 用户模型Service接口
     /// </summary>
     public class LoginService : ILoginService
     {
@@ -35,7 +38,7 @@ namespace Workflow_Back.Services
         public async Task<UserLoginResultDto> UserLoginAsync(UserLoginDto userLoginDto)
         {
             // 1、用户名和密码校验
-            if (userLoginDto.UserName.IsNullOrEmpty()
+            if (userLoginDto.UserName.IsNullOrEmpty() 
                 || userLoginDto.Password.IsNullOrEmpty())
             {
                 throw new CommonException("请输入用户名或密码");
@@ -44,7 +47,7 @@ namespace Workflow_Back.Services
             // 2、用户判断
             // 2.1、用户密码加密
             string pwd = EncryptProvider.CreateSha1Code(userLoginDto.Password);
-            User user = await _workflowFixtrue.db._UserRepository.FindAsync(
+            User user = await _workflowFixtrue.db.Users.FindAsync(
                         m => m.IsDel == false // 未删除
                         && m.UserName == userLoginDto.UserName.TrimBlank()
                         && m.Password == userLoginDto.Password);

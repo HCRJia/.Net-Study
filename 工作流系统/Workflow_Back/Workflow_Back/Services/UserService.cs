@@ -7,18 +7,18 @@ using Workflow_Back.Models;
 namespace Workflow_Back.Services
 {
     /// <summary>
-    /// Service接口
+    /// 用户模型Service接口
     /// </summary>
     public class UserService : IUserService
     {
-        private readonly IMapper _mapper;
         /// <summary>
         /// 工作流固定类
         /// </summary>
         public WorkflowFixtrue _workflowFixtrue { get; set; }
+        private readonly IMapper _mapper;  // 映射接口
 
         public UserService(WorkflowFixtrue workflowFixtrue,
-                            IMapper mapper)
+                           IMapper mapper)
         {
             _workflowFixtrue = workflowFixtrue;
             _mapper = mapper;
@@ -26,22 +26,27 @@ namespace Workflow_Back.Services
 
         public async Task<User> GetAsync(int Id)
         {
-            //1、查询数据
-            return await _workflowFixtrue.db._UserRepository.FindByIdAsync(Id);
+            //1、查询用户模型数据
+            return await _workflowFixtrue.db.Users.FindByIdAsync(Id);
         }
 
         public async Task<bool> AddAsync(User User)
         {
-            return await _workflowFixtrue.db._UserRepository.InsertAsync(User);
+            return await _workflowFixtrue.db.Users.InsertAsync(User);
         }
 
-        public Task<bool> CreateUserAsync(UserCreateDto userCreateDto)
+        /// <summary>
+        /// 用户创建实现
+        /// </summary>
+        /// <param name="userCreateDto"></param>
+        /// <returns></returns>
+        public async Task<bool> UserCreateAsync(UserCreateDto userCreateDto)
         {
-            // 1、Dto模型转化
-            // 使用 AutoMapper 进行对象映射
-            var user = _mapper.Map<User>(userCreateDto);
+            // 1、UserCreateDto模型映射
+            User user = _mapper.Map<User>(userCreateDto);
 
-            throw new NotImplementedException();
+            //2、实现用户创建
+            return await  _workflowFixtrue.db.Users.InsertAsync(user);
         }
     }
 }

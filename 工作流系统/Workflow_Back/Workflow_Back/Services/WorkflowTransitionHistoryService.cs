@@ -5,7 +5,7 @@ using Workflow_Back.Models;
 namespace Workflow_Back.Services
 {
     /// <summary>
-    /// Service接口
+    /// 流程流转历史模型Service接口
     /// </summary>
     public class WorkflowTransitionHistoryService : IWorkflowTransitionHistoryService
     {
@@ -21,13 +21,13 @@ namespace Workflow_Back.Services
 
         public async Task<WorkflowTransitionHistory> GetAsync(int Id)
         {
-            //1、查询数据
-            return await _workflowFixtrue.db._WorkflowTransitionHistoryRepository.FindByIdAsync(Id);
+            //1、查询流程流转历史模型数据
+            return await _workflowFixtrue.db.WorkflowTransitionHistorys.FindByIdAsync(Id);
         }
 
         public async Task<bool> AddAsync(WorkflowTransitionHistory WorkflowTransitionHistory)
         {
-            return await _workflowFixtrue.db._WorkflowTransitionHistoryRepository.InsertAsync(WorkflowTransitionHistory);
+            return await _workflowFixtrue.db.WorkflowTransitionHistorys.InsertAsync(WorkflowTransitionHistory);
         }
     }
 }

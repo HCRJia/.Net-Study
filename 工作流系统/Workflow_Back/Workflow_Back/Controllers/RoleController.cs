@@ -6,14 +6,14 @@ using Workflow_Back.Services;
 namespace Workflow_Back.Controllers
 {
     /// <summary>
-    /// 控制器
+    /// 角色模型控制器
     /// </summary>
     [Route("[controller]")]
     [ApiController]
     public class RoleController : CommonController<RoleController>
     {
         /// <summary>
-        /// Service
+        /// 角色模型Service
         /// </summary>
         private IRoleService _RoleService;   
 
@@ -25,26 +25,26 @@ namespace Workflow_Back.Controllers
         }
 
         /// <summary>
-        /// 查询Id
+        /// 查询角色模型Id
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpGet("{id}")]
         public async Task<Role> Get(int id)
         {
-            // 1、查询
+            // 1、查询角色模型
            return await _RoleService.GetAsync(id);
         }
 
         /// <summary>
-        /// 添加
+        /// 添加角色模型
         /// </summary>
         /// <param name="value"></param>
 
         [HttpPost]
         public async Task<bool> Post(Role Role)
         {
-            // 1、添加
+            // 1、添加角色模型
             return await _RoleService.AddAsync(Role);
         }
     }

@@ -5,7 +5,7 @@ using Workflow_Back.Models;
 namespace Workflow_Back.Services
 {
     /// <summary>
-    /// Service接口
+    /// 用户部门关联模型Service接口
     /// </summary>
     public class UserDeptService : IUserDeptService
     {
@@ -21,13 +21,13 @@ namespace Workflow_Back.Services
 
         public async Task<UserDept> GetAsync(int Id)
         {
-            //1、查询数据
-            return await _workflowFixtrue.db._UserDeptRepository.FindByIdAsync(Id);
+            //1、查询用户部门关联模型数据
+            return await _workflowFixtrue.db.UserDepts.FindByIdAsync(Id);
         }
 
         public async Task<bool> AddAsync(UserDept UserDept)
         {
-            return await _workflowFixtrue.db._UserDeptRepository.InsertAsync(UserDept);
+            return await _workflowFixtrue.db.UserDepts.InsertAsync(UserDept);
         }
     }
 }

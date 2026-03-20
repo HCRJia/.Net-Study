@@ -3,19 +3,19 @@ using Workflow_Back.Models;
 namespace Workflow_Back.Services
 {
     /// <summary>
-    /// Service接口
+    /// 流程流转历史模型Service接口
     /// </summary>
     public interface IWorkflowTransitionHistoryService
     {
         /// <summary>
-        /// 获取信息
+        /// 获取流程流转历史模型信息
         /// </summary>
-        /// <param name="Id">ID</param>
+        /// <param name="Id">流程流转历史模型ID</param>
         /// <returns></returns>
         public Task<WorkflowTransitionHistory> GetAsync(int Id);
 
         /// <summary>
-        /// 新增
+        /// 新增流程流转历史模型
         /// </summary>
         /// <param name="WorkflowTransitionHistory"></param>
         /// <returns></returns>

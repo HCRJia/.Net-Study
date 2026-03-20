@@ -3,10 +3,10 @@ using JadeFramework.Dapper.SqlGenerator;
 using System.Data;
 using Workflow_Back.Models;
 
-namespace Workflow_Back.Repositorys
+namespace Workflow_Back.Repositorise
 {
     /// <summary>
-    /// 仓储实现
+    /// 工作流获取权限系统数据模型仓储实现
     /// </summary>
     public class WorkflowsqlRepository : DapperRepository<Workflowsql>, IWorkflowsqlRepository
     {

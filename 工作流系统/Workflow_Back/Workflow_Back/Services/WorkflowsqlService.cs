@@ -5,7 +5,7 @@ using Workflow_Back.Models;
 namespace Workflow_Back.Services
 {
     /// <summary>
-    /// Service接口
+    /// 工作流获取权限系统数据模型Service接口
     /// </summary>
     public class WorkflowsqlService : IWorkflowsqlService
     {
@@ -21,13 +21,13 @@ namespace Workflow_Back.Services
 
         public async Task<Workflowsql> GetAsync(int Id)
         {
-            //1、查询数据
-            return await _workflowFixtrue.db._WorkflowsqlRepository.FindByIdAsync(Id);
+            //1、查询工作流获取权限系统数据模型数据
+            return await _workflowFixtrue.db.Workflowsqls.FindByIdAsync(Id);
         }
 
         public async Task<bool> AddAsync(Workflowsql Workflowsql)
         {
-            return await _workflowFixtrue.db._WorkflowsqlRepository.InsertAsync(Workflowsql);
+            return await _workflowFixtrue.db.Workflowsqls.InsertAsync(Workflowsql);
         }
     }
 }

@@ -6,14 +6,14 @@ using Workflow_Back.Services;
 namespace Workflow_Back.Controllers
 {
     /// <summary>
-    /// 控制器
+    /// 角色资源关联模型控制器
     /// </summary>
     [Route("[controller]")]
     [ApiController]
     public class RoleResourceController : CommonController<RoleResourceController>
     {
         /// <summary>
-        /// Service
+        /// 角色资源关联模型Service
         /// </summary>
         private IRoleResourceService _RoleResourceService;   
 
@@ -25,26 +25,26 @@ namespace Workflow_Back.Controllers
         }
 
         /// <summary>
-        /// 查询Id
+        /// 查询角色资源关联模型Id
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpGet("{id}")]
         public async Task<RoleResource> Get(int id)
         {
-            // 1、查询
+            // 1、查询角色资源关联模型
            return await _RoleResourceService.GetAsync(id);
         }
 
         /// <summary>
-        /// 添加
+        /// 添加角色资源关联模型
         /// </summary>
         /// <param name="value"></param>
 
         [HttpPost]
         public async Task<bool> Post(RoleResource RoleResource)
         {
-            // 1、添加
+            // 1、添加角色资源关联模型
             return await _RoleResourceService.AddAsync(RoleResource);
         }
     }

@@ -6,14 +6,14 @@ using Workflow_Back.Services;
 namespace Workflow_Back.Controllers
 {
     /// <summary>
-    /// 控制器
+    /// 资源【菜单】模型控制器
     /// </summary>
     [Route("[controller]")]
     [ApiController]
     public class ResourceController : CommonController<ResourceController>
     {
         /// <summary>
-        /// Service
+        /// 资源【菜单】模型Service
         /// </summary>
         private IResourceService _ResourceService;   
 
@@ -25,26 +25,26 @@ namespace Workflow_Back.Controllers
         }
 
         /// <summary>
-        /// 查询Id
+        /// 查询资源【菜单】模型Id
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpGet("{id}")]
         public async Task<Resource> Get(int id)
         {
-            // 1、查询
+            // 1、查询资源【菜单】模型
            return await _ResourceService.GetAsync(id);
         }
 
         /// <summary>
-        /// 添加
+        /// 添加资源【菜单】模型
         /// </summary>
         /// <param name="value"></param>
 
         [HttpPost]
         public async Task<bool> Post(Resource Resource)
         {
-            // 1、添加
+            // 1、添加资源【菜单】模型
             return await _ResourceService.AddAsync(Resource);
         }
     }

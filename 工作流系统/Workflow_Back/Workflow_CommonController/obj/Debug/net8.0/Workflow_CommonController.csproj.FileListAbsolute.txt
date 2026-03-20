@@ -34,3 +34,4 @@ D:\Code\.Net Study\工作流系统\Workflow_Back\Workflow_CommonController\obj\D
 D:\Code\.Net Study\工作流系统\Workflow_Back\Workflow_CommonController\obj\Debug\net8.0\Workflow_CommonController.pdb
 D:\Code\.Net Study\工作流系统\Workflow_Back\Workflow_CommonController\obj\Debug\net8.0\Workflow_CommonController.genruntimeconfig.cache
 D:\Code\.Net Study\工作流系统\Workflow_Back\Workflow_CommonController\obj\Debug\net8.0\ref\Workflow_CommonController.dll
+D:\Code\.Net Study\工作流系统\Workflow_Back\Workflow_CommonController\bin\Debug\net8.0\Newtonsoft.Json.dll

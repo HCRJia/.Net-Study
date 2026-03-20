@@ -6,14 +6,14 @@ using Workflow_Back.Services;
 namespace Workflow_Back.Controllers
 {
     /// <summary>
-    /// 控制器
+    /// 流程分类模型控制器
     /// </summary>
     [Route("[controller]")]
     [ApiController]
     public class WorkflowCategoryController : CommonController<WorkflowCategoryController>
     {
         /// <summary>
-        /// Service
+        /// 流程分类模型Service
         /// </summary>
         private IWorkflowCategoryService _WorkflowCategoryService;   
 
@@ -25,26 +25,26 @@ namespace Workflow_Back.Controllers
         }
 
         /// <summary>
-        /// 查询Id
+        /// 查询流程分类模型Id
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpGet("{id}")]
         public async Task<WorkflowCategory> Get(int id)
         {
-            // 1、查询
+            // 1、查询流程分类模型
            return await _WorkflowCategoryService.GetAsync(id);
         }
 
         /// <summary>
-        /// 添加
+        /// 添加流程分类模型
         /// </summary>
         /// <param name="value"></param>
 
         [HttpPost]
         public async Task<bool> Post(WorkflowCategory WorkflowCategory)
         {
-            // 1、添加
+            // 1、添加流程分类模型
             return await _WorkflowCategoryService.AddAsync(WorkflowCategory);
         }
     }

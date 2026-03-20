@@ -5,7 +5,7 @@ using Workflow_Back.Models;
 namespace Workflow_Back.Services
 {
     /// <summary>
-    /// Service接口
+    /// 角色模型Service接口
     /// </summary>
     public class RoleService : IRoleService
     {
@@ -21,13 +21,13 @@ namespace Workflow_Back.Services
 
         public async Task<Role> GetAsync(int Id)
         {
-            //1、查询数据
-            return await _workflowFixtrue.db._RoleRepository.FindByIdAsync(Id);
+            //1、查询角色模型数据
+            return await _workflowFixtrue.db.Roles.FindByIdAsync(Id);
         }
 
         public async Task<bool> AddAsync(Role Role)
         {
-            return await _workflowFixtrue.db._RoleRepository.InsertAsync(Role);
+            return await _workflowFixtrue.db.Roles.InsertAsync(Role);
         }
     }
 }

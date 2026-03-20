@@ -6,14 +6,14 @@ using Workflow_Back.Services;
 namespace Workflow_Back.Controllers
 {
     /// <summary>
-    /// 控制器
+    /// 流程实例模型【根据流程运行流程】控制器
     /// </summary>
     [Route("[controller]")]
     [ApiController]
     public class WorkflowInstanceController : CommonController<WorkflowInstanceController>
     {
         /// <summary>
-        /// Service
+        /// 流程实例模型【根据流程运行流程】Service
         /// </summary>
         private IWorkflowInstanceService _WorkflowInstanceService;   
 
@@ -25,26 +25,26 @@ namespace Workflow_Back.Controllers
         }
 
         /// <summary>
-        /// 查询Id
+        /// 查询流程实例模型【根据流程运行流程】Id
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpGet("{id}")]
         public async Task<WorkflowInstance> Get(int id)
         {
-            // 1、查询
+            // 1、查询流程实例模型【根据流程运行流程】
            return await _WorkflowInstanceService.GetAsync(id);
         }
 
         /// <summary>
-        /// 添加
+        /// 添加流程实例模型【根据流程运行流程】
         /// </summary>
         /// <param name="value"></param>
 
         [HttpPost]
         public async Task<bool> Post(WorkflowInstance WorkflowInstance)
         {
-            // 1、添加
+            // 1、添加流程实例模型【根据流程运行流程】
             return await _WorkflowInstanceService.AddAsync(WorkflowInstance);
         }
     }

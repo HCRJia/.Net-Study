@@ -1,5 +1,5 @@
 using JadeFramework.Dapper.DbContext;
-using Workflow_Back.Repositorys;
+using Workflow_Back.Repositorise;
 
 namespace Workflow_Back.Contexts
 {
@@ -9,42 +9,42 @@ namespace Workflow_Back.Contexts
     public interface IWorkflowDbContext : IDapperDbContext
     {
          //依赖IDeptRepository
-         public IDeptRepository _DeptRepository { get; }
+         public IDeptRepository Depts { get; }
          //依赖IResourceRepository
-         public IResourceRepository _ResourceRepository { get; }
+         public IResourceRepository Resources { get; }
          //依赖IRoleRepository
-         public IRoleRepository _RoleRepository { get; }
+         public IRoleRepository Roles { get; }
          //依赖IRoleResourceRepository
-         public IRoleResourceRepository _RoleResourceRepository { get; }
-         //依赖ISystemRepository
-         public ISystemRepository _SystemRepository { get; }
+         public IRoleResourceRepository RoleResources { get; }
+         //依赖ISystemsRepository
+         public ISystemsRepository Systemss { get; }
          //依赖IUserRepository
-         public IUserRepository _UserRepository { get; }
+         public IUserRepository Users { get; }
          //依赖IUserDeptRepository
-         public IUserDeptRepository _UserDeptRepository { get; }
+         public IUserDeptRepository UserDepts { get; }
          //依赖IUserRoleRepository
-         public IUserRoleRepository _UserRoleRepository { get; }
+         public IUserRoleRepository UserRoles { get; }
          //依赖IWorkflowRepository
-         public IWorkflowRepository _WorkflowRepository { get; }
+         public IWorkflowRepository Workflows { get; }
          //依赖IWorkflowAssignRepository
-         public IWorkflowAssignRepository _WorkflowAssignRepository { get; }
+         public IWorkflowAssignRepository WorkflowAssigns { get; }
          //依赖IWorkflowCategoryRepository
-         public IWorkflowCategoryRepository _WorkflowCategoryRepository { get; }
+         public IWorkflowCategoryRepository WorkflowCategorys { get; }
          //依赖IWorkflowFormRepository
-         public IWorkflowFormRepository _WorkflowFormRepository { get; }
+         public IWorkflowFormRepository WorkflowForms { get; }
          //依赖IWorkflowInstanceRepository
-         public IWorkflowInstanceRepository _WorkflowInstanceRepository { get; }
+         public IWorkflowInstanceRepository WorkflowInstances { get; }
          //依赖IWorkflowInstanceFormRepository
-         public IWorkflowInstanceFormRepository _WorkflowInstanceFormRepository { get; }
+         public IWorkflowInstanceFormRepository WorkflowInstanceForms { get; }
          //依赖IWorkflowNoticeRepository
-         public IWorkflowNoticeRepository _WorkflowNoticeRepository { get; }
+         public IWorkflowNoticeRepository WorkflowNotices { get; }
          //依赖IWorkflowOperationHistoryRepository
-         public IWorkflowOperationHistoryRepository _WorkflowOperationHistoryRepository { get; }
+         public IWorkflowOperationHistoryRepository WorkflowOperationHistorys { get; }
          //依赖IWorkflowTransitionHistoryRepository
-         public IWorkflowTransitionHistoryRepository _WorkflowTransitionHistoryRepository { get; }
+         public IWorkflowTransitionHistoryRepository WorkflowTransitionHistorys { get; }
          //依赖IWorkflowUrgeRepository
-         public IWorkflowUrgeRepository _WorkflowUrgeRepository { get; }
+         public IWorkflowUrgeRepository WorkflowUrges { get; }
          //依赖IWorkflowsqlRepository
-         public IWorkflowsqlRepository _WorkflowsqlRepository { get; }
+         public IWorkflowsqlRepository Workflowsqls { get; }
     }
 }

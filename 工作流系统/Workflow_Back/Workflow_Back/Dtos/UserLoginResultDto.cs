@@ -3,9 +3,6 @@
 namespace Workflow_Back.Dtos
 {
     /// <summary>
-    /// 登录Dto
-    /// </summary>
-    /// <summary>
     /// 用户登录结果Dto
     /// </summary>
     public class UserLoginResultDto

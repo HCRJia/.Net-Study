@@ -3,7 +3,7 @@ using JadeFramework.Dapper.SqlGenerator;
 using MySql.Data.MySqlClient;
 using System.Data;
 using System.Data.SqlClient;
-using Workflow_Back.Repositorys;
+using Workflow_Back.Repositorise;
 
 namespace Workflow_Back.Contexts
 {
@@ -25,43 +25,81 @@ namespace Workflow_Back.Contexts
             base(new MySqlConnection(ConnectionString))
         {
         }
-         //实现IDeptRepository
-         public IDeptRepository _DeptRepository => new DeptRepository(Connection, sqlGeneratorConfig);
-         //实现IResourceRepository
-         public IResourceRepository _ResourceRepository => new ResourceRepository(Connection, sqlGeneratorConfig);
-         //实现IRoleRepository
-         public IRoleRepository _RoleRepository => new RoleRepository(Connection, sqlGeneratorConfig);
-         //实现IRoleResourceRepository
-         public IRoleResourceRepository _RoleResourceRepository => new RoleResourceRepository(Connection, sqlGeneratorConfig);
-         //实现ISystemRepository
-         public ISystemRepository _SystemRepository => new SystemRepository(Connection, sqlGeneratorConfig);
-         //实现IUserRepository
-         public IUserRepository _UserRepository => new UserRepository(Connection, sqlGeneratorConfig);
-         //实现IUserDeptRepository
-         public IUserDeptRepository _UserDeptRepository => new UserDeptRepository(Connection, sqlGeneratorConfig);
-         //实现IUserRoleRepository
-         public IUserRoleRepository _UserRoleRepository => new UserRoleRepository(Connection, sqlGeneratorConfig);
-         //实现IWorkflowRepository
-         public IWorkflowRepository _WorkflowRepository => new WorkflowRepository(Connection, sqlGeneratorConfig);
-         //实现IWorkflowAssignRepository
-         public IWorkflowAssignRepository _WorkflowAssignRepository => new WorkflowAssignRepository(Connection, sqlGeneratorConfig);
-         //实现IWorkflowCategoryRepository
-         public IWorkflowCategoryRepository _WorkflowCategoryRepository => new WorkflowCategoryRepository(Connection, sqlGeneratorConfig);
-         //实现IWorkflowFormRepository
-         public IWorkflowFormRepository _WorkflowFormRepository => new WorkflowFormRepository(Connection, sqlGeneratorConfig);
-         //实现IWorkflowInstanceRepository
-         public IWorkflowInstanceRepository _WorkflowInstanceRepository => new WorkflowInstanceRepository(Connection, sqlGeneratorConfig);
-         //实现IWorkflowInstanceFormRepository
-         public IWorkflowInstanceFormRepository _WorkflowInstanceFormRepository => new WorkflowInstanceFormRepository(Connection, sqlGeneratorConfig);
-         //实现IWorkflowNoticeRepository
-         public IWorkflowNoticeRepository _WorkflowNoticeRepository => new WorkflowNoticeRepository(Connection, sqlGeneratorConfig);
-         //实现IWorkflowOperationHistoryRepository
-         public IWorkflowOperationHistoryRepository _WorkflowOperationHistoryRepository => new WorkflowOperationHistoryRepository(Connection, sqlGeneratorConfig);
-         //实现IWorkflowTransitionHistoryRepository
-         public IWorkflowTransitionHistoryRepository _WorkflowTransitionHistoryRepository => new WorkflowTransitionHistoryRepository(Connection, sqlGeneratorConfig);
-         //实现IWorkflowUrgeRepository
-         public IWorkflowUrgeRepository _WorkflowUrgeRepository => new WorkflowUrgeRepository(Connection, sqlGeneratorConfig);
-         //实现IWorkflowsqlRepository
-         public IWorkflowsqlRepository _WorkflowsqlRepository => new WorkflowsqlRepository(Connection, sqlGeneratorConfig);
+         /// <summary>
+        /// 实现部门模型仓储
+        /// </summary>
+        public IDeptRepository Depts => new DeptRepository(Connection, sqlGeneratorConfig);
+         /// <summary>
+        /// 实现资源【菜单】模型仓储
+        /// </summary>
+        public IResourceRepository Resources => new ResourceRepository(Connection, sqlGeneratorConfig);
+         /// <summary>
+        /// 实现角色模型仓储
+        /// </summary>
+        public IRoleRepository Roles => new RoleRepository(Connection, sqlGeneratorConfig);
+         /// <summary>
+        /// 实现角色资源关联模型仓储
+        /// </summary>
+        public IRoleResourceRepository RoleResources => new RoleResourceRepository(Connection, sqlGeneratorConfig);
+         /// <summary>
+        /// 实现子系统模型仓储
+        /// </summary>
+        public ISystemsRepository Systemss => new SystemsRepository(Connection, sqlGeneratorConfig);
+         /// <summary>
+        /// 实现用户模型仓储
+        /// </summary>
+        public IUserRepository Users => new UserRepository(Connection, sqlGeneratorConfig);
+         /// <summary>
+        /// 实现用户部门关联模型仓储
+        /// </summary>
+        public IUserDeptRepository UserDepts => new UserDeptRepository(Connection, sqlGeneratorConfig);
+         /// <summary>
+        /// 实现用户角色关联模型仓储
+        /// </summary>
+        public IUserRoleRepository UserRoles => new UserRoleRepository(Connection, sqlGeneratorConfig);
+         /// <summary>
+        /// 实现工作流模型仓储
+        /// </summary>
+        public IWorkflowRepository Workflows => new WorkflowRepository(Connection, sqlGeneratorConfig);
+         /// <summary>
+        /// 实现流程委托模型仓储
+        /// </summary>
+        public IWorkflowAssignRepository WorkflowAssigns => new WorkflowAssignRepository(Connection, sqlGeneratorConfig);
+         /// <summary>
+        /// 实现流程分类模型仓储
+        /// </summary>
+        public IWorkflowCategoryRepository WorkflowCategorys => new WorkflowCategoryRepository(Connection, sqlGeneratorConfig);
+         /// <summary>
+        /// 实现流程表单模型仓储
+        /// </summary>
+        public IWorkflowFormRepository WorkflowForms => new WorkflowFormRepository(Connection, sqlGeneratorConfig);
+         /// <summary>
+        /// 实现流程实例模型【根据流程运行流程】仓储
+        /// </summary>
+        public IWorkflowInstanceRepository WorkflowInstances => new WorkflowInstanceRepository(Connection, sqlGeneratorConfig);
+         /// <summary>
+        /// 实现流程实例表单关联模型仓储
+        /// </summary>
+        public IWorkflowInstanceFormRepository WorkflowInstanceForms => new WorkflowInstanceFormRepository(Connection, sqlGeneratorConfig);
+         /// <summary>
+        /// 实现流程通知节点模型仓储
+        /// </summary>
+        public IWorkflowNoticeRepository WorkflowNotices => new WorkflowNoticeRepository(Connection, sqlGeneratorConfig);
+         /// <summary>
+        /// 实现流程操作历史模型仓储
+        /// </summary>
+        public IWorkflowOperationHistoryRepository WorkflowOperationHistorys => new WorkflowOperationHistoryRepository(Connection, sqlGeneratorConfig);
+         /// <summary>
+        /// 实现流程流转历史模型仓储
+        /// </summary>
+        public IWorkflowTransitionHistoryRepository WorkflowTransitionHistorys => new WorkflowTransitionHistoryRepository(Connection, sqlGeneratorConfig);
+         /// <summary>
+        /// 实现催办记录模型仓储
+        /// </summary>
+        public IWorkflowUrgeRepository WorkflowUrges => new WorkflowUrgeRepository(Connection, sqlGeneratorConfig);
+         /// <summary>
+        /// 实现工作流获取权限系统数据模型仓储
+        /// </summary>
+        public IWorkflowsqlRepository Workflowsqls => new WorkflowsqlRepository(Connection, sqlGeneratorConfig);
     }
 }

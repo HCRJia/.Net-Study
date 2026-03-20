@@ -5,7 +5,7 @@ using Workflow_Back.Models;
 namespace Workflow_Back.Services
 {
     /// <summary>
-    /// Service接口
+    /// 流程操作历史模型Service接口
     /// </summary>
     public class WorkflowOperationHistoryService : IWorkflowOperationHistoryService
     {
@@ -21,13 +21,13 @@ namespace Workflow_Back.Services
 
         public async Task<WorkflowOperationHistory> GetAsync(int Id)
         {
-            //1、查询数据
-            return await _workflowFixtrue.db._WorkflowOperationHistoryRepository.FindByIdAsync(Id);
+            //1、查询流程操作历史模型数据
+            return await _workflowFixtrue.db.WorkflowOperationHistorys.FindByIdAsync(Id);
         }
 
         public async Task<bool> AddAsync(WorkflowOperationHistory WorkflowOperationHistory)
         {
-            return await _workflowFixtrue.db._WorkflowOperationHistoryRepository.InsertAsync(WorkflowOperationHistory);
+            return await _workflowFixtrue.db.WorkflowOperationHistorys.InsertAsync(WorkflowOperationHistory);
         }
     }
 }

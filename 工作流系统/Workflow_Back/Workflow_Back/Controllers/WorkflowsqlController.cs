@@ -6,14 +6,14 @@ using Workflow_Back.Services;
 namespace Workflow_Back.Controllers
 {
     /// <summary>
-    /// 控制器
+    /// 工作流获取权限系统数据模型控制器
     /// </summary>
     [Route("[controller]")]
     [ApiController]
     public class WorkflowsqlController : CommonController<WorkflowsqlController>
     {
         /// <summary>
-        /// Service
+        /// 工作流获取权限系统数据模型Service
         /// </summary>
         private IWorkflowsqlService _WorkflowsqlService;   
 
@@ -25,26 +25,26 @@ namespace Workflow_Back.Controllers
         }
 
         /// <summary>
-        /// 查询Id
+        /// 查询工作流获取权限系统数据模型Id
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpGet("{id}")]
         public async Task<Workflowsql> Get(int id)
         {
-            // 1、查询
+            // 1、查询工作流获取权限系统数据模型
            return await _WorkflowsqlService.GetAsync(id);
         }
 
         /// <summary>
-        /// 添加
+        /// 添加工作流获取权限系统数据模型
         /// </summary>
         /// <param name="value"></param>
 
         [HttpPost]
         public async Task<bool> Post(Workflowsql Workflowsql)
         {
-            // 1、添加
+            // 1、添加工作流获取权限系统数据模型
             return await _WorkflowsqlService.AddAsync(Workflowsql);
         }
     }

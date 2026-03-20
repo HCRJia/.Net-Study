@@ -5,7 +5,7 @@ using Workflow_Back.Models;
 namespace Workflow_Back.Services
 {
     /// <summary>
-    /// Service接口
+    /// 流程通知节点模型Service接口
     /// </summary>
     public class WorkflowNoticeService : IWorkflowNoticeService
     {
@@ -21,13 +21,13 @@ namespace Workflow_Back.Services
 
         public async Task<WorkflowNotice> GetAsync(int Id)
         {
-            //1、查询数据
-            return await _workflowFixtrue.db._WorkflowNoticeRepository.FindByIdAsync(Id);
+            //1、查询流程通知节点模型数据
+            return await _workflowFixtrue.db.WorkflowNotices.FindByIdAsync(Id);
         }
 
         public async Task<bool> AddAsync(WorkflowNotice WorkflowNotice)
         {
-            return await _workflowFixtrue.db._WorkflowNoticeRepository.InsertAsync(WorkflowNotice);
+            return await _workflowFixtrue.db.WorkflowNotices.InsertAsync(WorkflowNotice);
         }
     }
 }

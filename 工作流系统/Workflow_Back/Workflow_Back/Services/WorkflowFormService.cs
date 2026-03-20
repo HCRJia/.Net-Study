@@ -5,7 +5,7 @@ using Workflow_Back.Models;
 namespace Workflow_Back.Services
 {
     /// <summary>
-    /// Service接口
+    /// 流程表单模型Service接口
     /// </summary>
     public class WorkflowFormService : IWorkflowFormService
     {
@@ -21,13 +21,13 @@ namespace Workflow_Back.Services
 
         public async Task<WorkflowForm> GetAsync(int Id)
         {
-            //1、查询数据
-            return await _workflowFixtrue.db._WorkflowFormRepository.FindByIdAsync(Id);
+            //1、查询流程表单模型数据
+            return await _workflowFixtrue.db.WorkflowForms.FindByIdAsync(Id);
         }
 
         public async Task<bool> AddAsync(WorkflowForm WorkflowForm)
         {
-            return await _workflowFixtrue.db._WorkflowFormRepository.InsertAsync(WorkflowForm);
+            return await _workflowFixtrue.db.WorkflowForms.InsertAsync(WorkflowForm);
         }
     }
 }

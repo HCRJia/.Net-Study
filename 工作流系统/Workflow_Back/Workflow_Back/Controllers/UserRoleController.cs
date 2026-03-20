@@ -6,14 +6,14 @@ using Workflow_Back.Services;
 namespace Workflow_Back.Controllers
 {
     /// <summary>
-    /// 控制器
+    /// 用户角色关联模型控制器
     /// </summary>
     [Route("[controller]")]
     [ApiController]
     public class UserRoleController : CommonController<UserRoleController>
     {
         /// <summary>
-        /// Service
+        /// 用户角色关联模型Service
         /// </summary>
         private IUserRoleService _UserRoleService;   
 
@@ -25,26 +25,26 @@ namespace Workflow_Back.Controllers
         }
 
         /// <summary>
-        /// 查询Id
+        /// 查询用户角色关联模型Id
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpGet("{id}")]
         public async Task<UserRole> Get(int id)
         {
-            // 1、查询
+            // 1、查询用户角色关联模型
            return await _UserRoleService.GetAsync(id);
         }
 
         /// <summary>
-        /// 添加
+        /// 添加用户角色关联模型
         /// </summary>
         /// <param name="value"></param>
 
         [HttpPost]
         public async Task<bool> Post(UserRole UserRole)
         {
-            // 1、添加
+            // 1、添加用户角色关联模型
             return await _UserRoleService.AddAsync(UserRole);
         }
     }

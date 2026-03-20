@@ -6,14 +6,14 @@ using Workflow_Back.Services;
 namespace Workflow_Back.Controllers
 {
     /// <summary>
-    /// 控制器
+    /// 流程通知节点模型控制器
     /// </summary>
     [Route("[controller]")]
     [ApiController]
     public class WorkflowNoticeController : CommonController<WorkflowNoticeController>
     {
         /// <summary>
-        /// Service
+        /// 流程通知节点模型Service
         /// </summary>
         private IWorkflowNoticeService _WorkflowNoticeService;   
 
@@ -25,26 +25,26 @@ namespace Workflow_Back.Controllers
         }
 
         /// <summary>
-        /// 查询Id
+        /// 查询流程通知节点模型Id
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpGet("{id}")]
         public async Task<WorkflowNotice> Get(int id)
         {
-            // 1、查询
+            // 1、查询流程通知节点模型
            return await _WorkflowNoticeService.GetAsync(id);
         }
 
         /// <summary>
-        /// 添加
+        /// 添加流程通知节点模型
         /// </summary>
         /// <param name="value"></param>
 
         [HttpPost]
         public async Task<bool> Post(WorkflowNotice WorkflowNotice)
         {
-            // 1、添加
+            // 1、添加流程通知节点模型
             return await _WorkflowNoticeService.AddAsync(WorkflowNotice);
         }
     }

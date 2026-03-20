@@ -5,7 +5,7 @@ using Workflow_Back.Models;
 namespace Workflow_Back.Services
 {
     /// <summary>
-    /// Service接口
+    /// 工作流模型Service接口
     /// </summary>
     public class WorkflowService : IWorkflowService
     {
@@ -21,13 +21,13 @@ namespace Workflow_Back.Services
 
         public async Task<Workflow> GetAsync(int Id)
         {
-            //1、查询数据
-            return await _workflowFixtrue.db._WorkflowRepository.FindByIdAsync(Id);
+            //1、查询工作流模型数据
+            return await _workflowFixtrue.db.Workflows.FindByIdAsync(Id);
         }
 
         public async Task<bool> AddAsync(Workflow Workflow)
         {
-            return await _workflowFixtrue.db._WorkflowRepository.InsertAsync(Workflow);
+            return await _workflowFixtrue.db.Workflows.InsertAsync(Workflow);
         }
     }
 }

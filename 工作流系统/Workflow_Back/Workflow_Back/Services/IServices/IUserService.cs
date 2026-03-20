@@ -4,7 +4,7 @@ using Workflow_Back.Models;
 namespace Workflow_Back.Services
 {
     /// <summary>
-    /// Service接口
+    /// 用户模型Service接口
     /// </summary>
     public interface IUserService
     {
@@ -22,6 +22,11 @@ namespace Workflow_Back.Services
         /// <returns></returns>
         public Task<bool> AddAsync(User User);
 
-        public Task<bool> CreateUserAsync(UserCreateDto userCreateDto);
+        /// <summary>
+        /// 创建用户服务
+        /// </summary>
+        /// <param name="userCreateDto"></param>
+        /// <returns></returns>
+        public Task<bool> UserCreateAsync(UserCreateDto userCreateDto);
     }
 }

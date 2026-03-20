@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Workflow_codegenerator")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+81bcf1ac59e18f805b041098746e535b2ff0c933")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a7df6b3af5db51a39fc8824edcaa24a93e3ef7df")]
 [assembly: System.Reflection.AssemblyProductAttribute("Workflow_codegenerator")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Workflow_codegenerator")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

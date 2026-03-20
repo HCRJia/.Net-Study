@@ -6,14 +6,14 @@ using Workflow_Back.Services;
 namespace Workflow_Back.Controllers
 {
     /// <summary>
-    /// 控制器
+    /// 流程委托模型控制器
     /// </summary>
     [Route("[controller]")]
     [ApiController]
     public class WorkflowAssignController : CommonController<WorkflowAssignController>
     {
         /// <summary>
-        /// Service
+        /// 流程委托模型Service
         /// </summary>
         private IWorkflowAssignService _WorkflowAssignService;   
 
@@ -25,26 +25,26 @@ namespace Workflow_Back.Controllers
         }
 
         /// <summary>
-        /// 查询Id
+        /// 查询流程委托模型Id
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpGet("{id}")]
         public async Task<WorkflowAssign> Get(int id)
         {
-            // 1、查询
+            // 1、查询流程委托模型
            return await _WorkflowAssignService.GetAsync(id);
         }
 
         /// <summary>
-        /// 添加
+        /// 添加流程委托模型
         /// </summary>
         /// <param name="value"></param>
 
         [HttpPost]
         public async Task<bool> Post(WorkflowAssign WorkflowAssign)
         {
-            // 1、添加
+            // 1、添加流程委托模型
             return await _WorkflowAssignService.AddAsync(WorkflowAssign);
         }
     }

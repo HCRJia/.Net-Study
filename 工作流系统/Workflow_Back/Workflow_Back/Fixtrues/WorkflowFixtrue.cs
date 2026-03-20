@@ -1,4 +1,10 @@
-﻿using Workflow_Back.Contexts;
+﻿using JadeFramework.Dapper.DbContext;
+using JadeFramework.Dapper.SqlGenerator;
+using MySql.Data.MySqlClient;
+using System.Data;
+using System.Data.SqlClient;
+using Workflow_Back.Contexts;
+using Workflow_Back.Repositorise;
 
 namespace Workflow_Back.Fixtrues
 {

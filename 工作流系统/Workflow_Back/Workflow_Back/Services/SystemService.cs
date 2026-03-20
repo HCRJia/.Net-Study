@@ -21,13 +21,13 @@ namespace Workflow_Back.Services
 
         public async Task<Systems> GetAsync(int Id)
         {
-            //1、查询数据
-            return await _workflowFixtrue.db._SystemRepository.FindByIdAsync(Id);
+            //1、查询子系统模型数据
+            return await _workflowFixtrue.db.Systemss.FindByIdAsync(Id);
         }
 
-        public async Task<bool> AddAsync(Systems System)
+        public async Task<bool> AddAsync(Systems Systems)
         {
-            return await _workflowFixtrue.db._SystemRepository.InsertAsync(System);
+            return await _workflowFixtrue.db.Systemss.InsertAsync(Systems);
         }
     }
 }

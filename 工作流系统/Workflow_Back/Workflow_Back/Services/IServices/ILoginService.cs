@@ -4,7 +4,7 @@ using Workflow_Back.Models;
 namespace Workflow_Back.Services
 {
     /// <summary>
-    /// Service接口
+    /// 登录Service接口
     /// </summary>
     public interface ILoginService
     {
@@ -14,5 +14,6 @@ namespace Workflow_Back.Services
         /// <param name="userLoginDto"></param>
         /// <returns></returns>
         public Task<UserLoginResultDto> UserLoginAsync(UserLoginDto userLoginDto);
+
     }
 }

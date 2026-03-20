@@ -1,7 +1,7 @@
 ﻿namespace Workflow_Back.Dtos
 {
     /// <summary>
-    /// 登录Dto
+    /// 用户登录Dto
     /// </summary>
     public class UserLoginDto
     {

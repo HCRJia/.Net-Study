@@ -7,14 +7,14 @@ using Workflow_Back.Services;
 namespace Workflow_Back.Controllers
 {
     /// <summary>
-    /// 控制器
+    /// 用户模型控制器
     /// </summary>
     [Route("[controller]")]
     [ApiController]
     public class UserController : CommonController<UserController>
     {
         /// <summary>
-        /// Service
+        /// 用户模型Service
         /// </summary>
         private IUserService _UserService;   
 
@@ -26,38 +26,38 @@ namespace Workflow_Back.Controllers
         }
 
         /// <summary>
-        /// 查询Id
+        /// 查询用户模型Id
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpGet("{id}")]
         public async Task<User> Get(int id)
         {
-            // 1、查询
+            // 1、查询用户模型
            return await _UserService.GetAsync(id);
         }
 
-        /// <summary>
-        /// 添加
+        /*/// <summary>
+        /// 添加用户模型
         /// </summary>
         /// <param name="value"></param>
 
-        //[HttpPost]
-        //public async Task<bool> Post(User User)
-        //{
-        //    // 1、添加
-        //    return await _UserService.AddAsync(User);
-        //}
+        [HttpPost]
+        public async Task<bool> Post(User User)
+        {
+            // 1、添加用户模型
+            return await _UserService.AddAsync(User);
+        }*/
 
         /// <summary>
-        /// 创建用户
+        /// 用户创建接口
         /// </summary>
         /// <param name="userCreateDto"></param>
         /// <returns></returns>
         [HttpPost]
-        public async Task CreateUser(UserCreateDto userCreateDto)
+        public async Task<bool> UserCreateAsync(UserCreateDto userCreateDto)
         {
-            _UserService.CreateUserAsync(userCreateDto);
+            return await _UserService.UserCreateAsync(userCreateDto);
         }
     }
 }

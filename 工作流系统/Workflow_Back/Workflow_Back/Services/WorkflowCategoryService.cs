@@ -5,7 +5,7 @@ using Workflow_Back.Models;
 namespace Workflow_Back.Services
 {
     /// <summary>
-    /// Service接口
+    /// 流程分类模型Service接口
     /// </summary>
     public class WorkflowCategoryService : IWorkflowCategoryService
     {
@@ -21,13 +21,13 @@ namespace Workflow_Back.Services
 
         public async Task<WorkflowCategory> GetAsync(int Id)
         {
-            //1、查询数据
-            return await _workflowFixtrue.db._WorkflowCategoryRepository.FindByIdAsync(Id);
+            //1、查询流程分类模型数据
+            return await _workflowFixtrue.db.WorkflowCategorys.FindByIdAsync(Id);
         }
 
         public async Task<bool> AddAsync(WorkflowCategory WorkflowCategory)
         {
-            return await _workflowFixtrue.db._WorkflowCategoryRepository.InsertAsync(WorkflowCategory);
+            return await _workflowFixtrue.db.WorkflowCategorys.InsertAsync(WorkflowCategory);
         }
     }
 }

@@ -3,19 +3,19 @@ using Workflow_Back.Models;
 namespace Workflow_Back.Services
 {
     /// <summary>
-    /// Service接口
+    /// 部门模型Service接口
     /// </summary>
     public interface IDeptService
     {
         /// <summary>
-        /// 获取信息
+        /// 获取部门模型信息
         /// </summary>
-        /// <param name="Id">ID</param>
+        /// <param name="Id">部门模型ID</param>
         /// <returns></returns>
         public Task<Dept> GetAsync(int Id);
 
         /// <summary>
-        /// 新增
+        /// 新增部门模型
         /// </summary>
         /// <param name="Dept"></param>
         /// <returns></returns>

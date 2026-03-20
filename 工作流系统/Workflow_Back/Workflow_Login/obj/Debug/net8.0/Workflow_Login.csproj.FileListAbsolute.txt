@@ -40,3 +40,4 @@ D:\Code\.Net Study\工作流系统\Workflow_Back\Workflow_Login\obj\Debug\net8.0
 D:\Code\.Net Study\工作流系统\Workflow_Back\Workflow_Login\obj\Debug\net8.0\Workflow_Login.pdb
 D:\Code\.Net Study\工作流系统\Workflow_Back\Workflow_Login\obj\Debug\net8.0\Workflow_Login.genruntimeconfig.cache
 D:\Code\.Net Study\工作流系统\Workflow_Back\Workflow_Login\obj\Debug\net8.0\ref\Workflow_Login.dll
+D:\Code\.Net Study\工作流系统\Workflow_Back\Workflow_Login\bin\Debug\net8.0\Newtonsoft.Json.dll

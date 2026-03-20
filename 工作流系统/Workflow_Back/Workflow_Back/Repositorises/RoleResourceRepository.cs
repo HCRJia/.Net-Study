@@ -3,10 +3,10 @@ using JadeFramework.Dapper.SqlGenerator;
 using System.Data;
 using Workflow_Back.Models;
 
-namespace Workflow_Back.Repositorys
+namespace Workflow_Back.Repositorise
 {
     /// <summary>
-    /// 仓储实现
+    /// 角色资源关联模型仓储实现
     /// </summary>
     public class RoleResourceRepository : DapperRepository<RoleResource>, IRoleResourceRepository
     {
