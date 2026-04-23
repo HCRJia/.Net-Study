@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "5yXMlK59b70=",
+  "success": true,
+  "projectFilePath": "D:\\Code\\.Net Study\\.Net基础\\1.依赖注入\\Inject\\Inject\\Inject.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\cdk\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\8.0.1\\microsoft.extensions.dependencyinjection.8.0.1.nupkg.sha512",
+    "C:\\Users\\cdk\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.2\\microsoft.extensions.dependencyinjection.abstractions.8.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}
