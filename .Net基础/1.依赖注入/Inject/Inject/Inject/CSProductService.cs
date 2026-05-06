@@ -10,10 +10,10 @@ namespace Inject.Inject
     {
         public IProductRepository productRepository { set; get; }
 
-        /*public CSProductService(IProductRepository productRepository)
+        public CSProductService(IProductRepository productRepository)
         {
             this.productRepository = productRepository;
-        }*/
+        }
 
         public void GetProduct()
         {

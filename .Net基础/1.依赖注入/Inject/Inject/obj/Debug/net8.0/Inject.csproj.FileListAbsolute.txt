@@ -17,3 +17,4 @@ D:\Code\.Net Study\.Net基础\1.依赖注入\Inject\Inject\obj\Debug\net8.0\refi
 D:\Code\.Net Study\.Net基础\1.依赖注入\Inject\Inject\obj\Debug\net8.0\Inject.pdb
 D:\Code\.Net Study\.Net基础\1.依赖注入\Inject\Inject\obj\Debug\net8.0\Inject.genruntimeconfig.cache
 D:\Code\.Net Study\.Net基础\1.依赖注入\Inject\Inject\obj\Debug\net8.0\ref\Inject.dll
+D:\Code\.Net Study\.Net基础\1.依赖注入\Inject\Inject\bin\Debug\net8.0\Autofac.dll

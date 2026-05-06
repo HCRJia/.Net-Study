@@ -8,16 +8,16 @@ namespace Inject.Inject
 {
     public class ProductService : IProductService
     {
-        public ProductRepository productRepository { set; get; }
+        public IProductRepository productRepository { set; get; }
 
-        public ProductService(ProductRepository productRepository)
+        public ProductService(IProductRepository productRepository)
         {
             this.productRepository = productRepository;
         }
         public void GetProduct()
         {
             productRepository.GetProduct();
-            Console.WriteLine($"查询商品成功:{productRepository.Id}");
+            Console.WriteLine($"查询商品成功:{this.GetHashCode()}");
         }
     }
 }

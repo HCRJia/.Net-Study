@@ -1,8 +1,10 @@
-﻿using Inject.Inject;
+﻿using Autofac;
+using Inject.Inject;
 using Microsoft.Extensions.DependencyInjection;
 
 #region 1、单例
 {
+
     /*// 1、创建依赖注入（IOC容器）
     ServiceCollection services = new ServiceCollection();
 
@@ -87,37 +89,58 @@ using Microsoft.Extensions.DependencyInjection;
 #endregion
 
 #region 4、多实现类
+//{
+//    // 1、创建依赖注入（IOC容器）
+//    ServiceCollection services = new ServiceCollection();
+
+//    // 2、注册ProductService
+//    services.AddScoped<IProductService, ProductService>();
+//    services.AddScoped<IProductService, CSProductService>();
+//    // 2.1、注册ProductRepository
+//    services.AddScoped<IProductRepository, ProductRepository>();
+
+//    // 3、取对象（构造ServiceProvider）
+//    var ServiceProvider = services.BuildServiceProvider();
+
+//    // 4、取对象
+//    using (IServiceScope serviceScope = ServiceProvider.CreateScope())
+//    {
+
+//        //IProductService productService = serviceScope.ServiceProvider.GetRequiredService<IProductService>();
+//        //productService.GetProduct();
+
+
+//        //IProductService productService1 = serviceScope.ServiceProvider.GetRequiredService<IProductService>();
+//        //productService1.GetProduct();
+
+//        // 2、取多个实现类
+//        IEnumerable<IProductService> productServices = serviceScope.ServiceProvider.GetServices<IProductService>();
+//        foreach (var productService in productServices)
+//        {
+//            productService.GetProduct();
+//        }
+
+//    }
+//}
+#endregion
+
+#region 5、Autofac
 {
-    // 1、创建依赖注入（IOC容器）
-    ServiceCollection services = new ServiceCollection();
+    // 1、创建ContainerBuilder
+    ContainerBuilder containerBuilder = new ContainerBuilder();
 
-    // 2、注册ProductService
-    services.AddScoped<IProductService, ProductService>();
-    services.AddScoped<IProductService, CSProductService>();
-    // 2.1、注册ProductRepository
-    services.AddScoped<IProductRepository, ProductRepository>();
+    containerBuilder.RegisterType<ProductService>().As<IProductService>().PropertiesAutowired();
+    containerBuilder.RegisterType<CSProductService>().As<IProductService>().PropertiesAutowired();
+    containerBuilder.RegisterType<ProductRepository>().As<IProductRepository>();
 
-    // 3、取对象（构造ServiceProvider）
-    var ServiceProvider = services.BuildServiceProvider();
+    // 2、构造容器
+    var Container = containerBuilder.Build();
 
-    // 4、取对象
-    using (IServiceScope serviceScope = ServiceProvider.CreateScope())
+    // 3、取对象
+    using (var scope = Container.BeginLifetimeScope())
     {
-
-        IProductService productService = serviceScope.ServiceProvider.GetRequiredService<IProductService>();
+        IProductService productService = scope.Resolve<IProductService>();
         productService.GetProduct();
-
-
-        IProductService productService1 = serviceScope.ServiceProvider.GetRequiredService<IProductService>();
-        productService1.GetProduct();
-
-        // 2、取多个实现类
-        IEnumerable<IProductService> productServices = serviceScope.ServiceProvider.GetServices<IProductService>();
-        foreach (var productService in productServices)
-        {
-            productService.GetProduct();
-        }
-
     }
 }
 #endregion

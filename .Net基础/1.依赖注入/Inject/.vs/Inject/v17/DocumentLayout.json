@@ -7,24 +7,24 @@
       "RelativeMoniker": "D:0:0:{D518F6DD-D06F-4A3A-B080-A801342D68CB}|Inject\\Inject.csproj|solutionrelative:inject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D518F6DD-D06F-4A3A-B080-A801342D68CB}|Inject\\Inject.csproj|d:\\code\\.net study\\.net\u57FA\u7840\\1.\u4F9D\u8D56\u6CE8\u5165\\inject\\inject\\inject\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D518F6DD-D06F-4A3A-B080-A801342D68CB}|Inject\\Inject.csproj|solutionrelative:inject\\inject\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D518F6DD-D06F-4A3A-B080-A801342D68CB}|Inject\\Inject.csproj|d:\\code\\.net study\\.net\u57FA\u7840\\1.\u4F9D\u8D56\u6CE8\u5165\\inject\\inject\\inject\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D518F6DD-D06F-4A3A-B080-A801342D68CB}|Inject\\Inject.csproj|solutionrelative:inject\\inject\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D518F6DD-D06F-4A3A-B080-A801342D68CB}|Inject\\Inject.csproj|d:\\code\\.net study\\.net\u57FA\u7840\\1.\u4F9D\u8D56\u6CE8\u5165\\inject\\inject\\inject\\iproductrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D518F6DD-D06F-4A3A-B080-A801342D68CB}|Inject\\Inject.csproj|solutionrelative:inject\\inject\\iproductrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D518F6DD-D06F-4A3A-B080-A801342D68CB}|Inject\\Inject.csproj|d:\\code\\.net study\\.net\u57FA\u7840\\1.\u4F9D\u8D56\u6CE8\u5165\\inject\\inject\\inject\\csproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D518F6DD-D06F-4A3A-B080-A801342D68CB}|Inject\\Inject.csproj|solutionrelative:inject\\inject\\csproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D518F6DD-D06F-4A3A-B080-A801342D68CB}|Inject\\Inject.csproj|d:\\code\\.net study\\.net\u57FA\u7840\\1.\u4F9D\u8D56\u6CE8\u5165\\inject\\inject\\inject\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D518F6DD-D06F-4A3A-B080-A801342D68CB}|Inject\\Inject.csproj|solutionrelative:inject\\inject\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D518F6DD-D06F-4A3A-B080-A801342D68CB}|Inject\\Inject.csproj|d:\\code\\.net study\\.net\u57FA\u7840\\1.\u4F9D\u8D56\u6CE8\u5165\\inject\\inject\\inject\\csproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D518F6DD-D06F-4A3A-B080-A801342D68CB}|Inject\\Inject.csproj|solutionrelative:inject\\inject\\csproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D518F6DD-D06F-4A3A-B080-A801342D68CB}|Inject\\Inject.csproj|d:\\code\\.net study\\.net\u57FA\u7840\\1.\u4F9D\u8D56\u6CE8\u5165\\inject\\inject\\inject\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D518F6DD-D06F-4A3A-B080-A801342D68CB}|Inject\\Inject.csproj|solutionrelative:inject\\inject\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D518F6DD-D06F-4A3A-B080-A801342D68CB}|Inject\\Inject.csproj|d:\\code\\.net study\\.net\u57FA\u7840\\1.\u4F9D\u8D56\u6CE8\u5165\\inject\\inject\\inject\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D518F6DD-D06F-4A3A-B080-A801342D68CB}|Inject\\Inject.csproj|solutionrelative:inject\\inject\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D518F6DD-D06F-4A3A-B080-A801342D68CB}|Inject\\Inject.csproj|d:\\code\\.net study\\.net\u57FA\u7840\\1.\u4F9D\u8D56\u6CE8\u5165\\inject\\inject\\inject\\iproductrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D518F6DD-D06F-4A3A-B080-A801342D68CB}|Inject\\Inject.csproj|solutionrelative:inject\\inject\\iproductrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -209,8 +209,12 @@
               "Name": "ST:138:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "IProductRepository.cs",
               "DocumentMoniker": "D:\\Code\\.Net Study\\.Net\u57FA\u7840\\1.\u4F9D\u8D56\u6CE8\u5165\\Inject\\Inject\\Inject\\IProductRepository.cs",
               "RelativeDocumentMoniker": "Inject\\Inject\\IProductRepository.cs",
@@ -223,7 +227,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "CSProductService.cs",
               "DocumentMoniker": "D:\\Code\\.Net Study\\.Net\u57FA\u7840\\1.\u4F9D\u8D56\u6CE8\u5165\\Inject\\Inject\\Inject\\CSProductService.cs",
               "RelativeDocumentMoniker": "Inject\\Inject\\CSProductService.cs",
@@ -236,7 +240,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "IProductService.cs",
               "DocumentMoniker": "D:\\Code\\.Net Study\\.Net\u57FA\u7840\\1.\u4F9D\u8D56\u6CE8\u5165\\Inject\\Inject\\Inject\\IProductService.cs",
               "RelativeDocumentMoniker": "Inject\\Inject\\IProductService.cs",
@@ -248,12 +252,8 @@
               "EditorCaption": ""
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "ProductRepository.cs",
               "DocumentMoniker": "D:\\Code\\.Net Study\\.Net\u57FA\u7840\\1.\u4F9D\u8D56\u6CE8\u5165\\Inject\\Inject\\Inject\\ProductRepository.cs",
               "RelativeDocumentMoniker": "Inject\\Inject\\ProductRepository.cs",
@@ -266,13 +266,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "ProductService.cs",
               "DocumentMoniker": "D:\\Code\\.Net Study\\.Net\u57FA\u7840\\1.\u4F9D\u8D56\u6CE8\u5165\\Inject\\Inject\\Inject\\ProductService.cs",
               "RelativeDocumentMoniker": "Inject\\Inject\\ProductService.cs",
               "ToolTip": "D:\\Code\\.Net Study\\.Net\u57FA\u7840\\1.\u4F9D\u8D56\u6CE8\u5165\\Inject\\Inject\\Inject\\ProductService.cs",
               "RelativeToolTip": "Inject\\Inject\\ProductService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-17T14:30:51.848Z",
               "EditorCaption": ""
@@ -285,7 +285,7 @@
               "RelativeDocumentMoniker": "Inject\\Program.cs",
               "ToolTip": "D:\\Code\\.Net Study\\.Net\u57FA\u7840\\1.\u4F9D\u8D56\u6CE8\u5165\\Inject\\Inject\\Program.cs",
               "RelativeToolTip": "Inject\\Program.cs",
-              "ViewState": "AgIAAFcAAAAAAAAAAAAQwHYAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAAAH8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-17T14:27:24.743Z",
               "EditorCaption": ""
