@@ -1,0 +1,2 @@
+﻿AppSettings.ApplicatoinName=YDT_NET8_Configurationss_Text
+AppSettings.Version=5.0.0
