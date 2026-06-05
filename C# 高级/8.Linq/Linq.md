@@ -138,7 +138,7 @@ var list = studentList.GroupBy(s => s.ClassId).Select(sg => new
 Linq还可以实现SQL里的连接功能，join类似与内连接，为了实现内连接，新实现了一个类classList
 
 ```csharp
-var list = from s in 
+var list = from s in studentList
            join c in classList on s.ClassId equals c.Id
            into scList
            from sc in scList.DefaultIfEmpty()//

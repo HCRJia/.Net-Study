@@ -1,8 +1,8 @@
-# Lamdba是什么
+# Lambda是什么
 
 `Lambda` 表达式是 `C#` 中简洁表达匿名方法的一种方式，是一个语法糖，常用于函数式编程风格。`Lambda` 的本质其实是一个匿名方法。
 
-# Lamdba使用
+# Lambda使用
 
 ## 匿名方法
 
@@ -36,9 +36,9 @@
 }
 ```
 
-写了通过Lamdba表达式定义的委托，一步一步简化，最终变成(parameter_list) => expression的语句。这个语句左边是参数列表，右边是表达式，中间用=>来连接，在编译后，这条语句会编译成匿名方法。
+写了通过Lambda表达式定义的委托，一步一步简化，最终变成(parameter_list) => expression的语句。这个语句左边是参数列表，右边是表达式，中间用=>来连接，在编译后，这条语句会编译成匿名方法。
 
-当然，Lamdba也可以用在有返回值的方法：
+当然，Lambda也可以用在有返回值的方法：
 
 ```csharp
 Func<int> func0 = () => DateTime.Now.Month;
@@ -50,7 +50,7 @@ Console.WriteLine("返回值：" + iResult);
 
 ## 匿名类
 
-Lamdba表达式是一个匿名方法，匿名类也可以拿来一块讲，下面就是匿名类的一种使用：
+Lambda表达式是一个匿名方法，匿名类也可以拿来一块讲，下面就是匿名类的一种使用：
 
 ```csharp
 var model = new 

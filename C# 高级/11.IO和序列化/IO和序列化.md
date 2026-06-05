@@ -30,7 +30,7 @@ FileInfo fileInfo = new FileInfo(Path.Combine(LogPath, "info.txt"));
 Console.WriteLine(string.Format("{0} {1} {2}", fileInfo.FullName, fileInfo.CreationTime, fileInfo.LastWriteTime));
 ```
 
-这块代码就是通过路径去获取文件夹和文件，然后展示两个类的FullName，CreationTime，LastWriteTime属性。这里需要注意，直接用DirectoryInfo(地址)来获取是有问题了，不管该地址存不存在都不会报错，所以需要通过Directory.Exists(LogPath)来判断路径是否存在，FileInfo同理。
+这块代码就是通过路径去获取文件夹和文件，然后展示两个类的FullName，CreationTime，LastWriteTime属性。这里需要注意，直接用DirectoryInfo(地址)来获取是有问题的，不管该地址存不存在都不会报错，所以需要通过Directory.Exists(LogPath)来判断路径是否存在，FileInfo同理。
 
 ```csharp
 DirectoryInfo directoryInfo = Directory.CreateDirectory(LogPath);//一次性创建全部的子路径
@@ -218,6 +218,8 @@ public static List<DirectoryInfo> GetAllDirectory(string rootPath)
 序列化就是将数据通过某种规则转换成字符串，反序列化就是字符串通过某种规则转换成数据。
 
 序列不只json格式，还有二进制，soap，xml等格式。下面.net 8版本的三种的实现代码。
+
+> **注意**：`BinaryFormatter` 在 .NET 5+ 中已被标记为过时（obsolete），因其存在安全漏洞。在 .NET 8 中默认会抛出异常，如需使用需在 `.csproj` 中添加 `<EnableUnsafeBinaryFormatterSerialization>true</EnableUnsafeBinaryFormatterSerialization>`。
 
 ```csharp
 public static void BinarySerialize()
