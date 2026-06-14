@@ -221,6 +221,10 @@
               "Name": "ST:144:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "ProductServiceSettings.cs",
@@ -230,8 +234,7 @@
               "RelativeToolTip": "Configurations\\Applications\\ProductServiceSettings.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-24T15:03:50.606Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-24T15:03:50.606Z"
             },
             {
               "$type": "Document",
@@ -241,14 +244,9 @@
               "RelativeDocumentMoniker": "Configurations\\Applications\\ProductService.cs",
               "ToolTip": "D:\\Code\\.Net Study\\.Net\u57FA\u7840\\2.\u914D\u7F6E\u7EC4\u4EF6\\Configurations\\Configurations\\Applications\\ProductService.cs",
               "RelativeToolTip": "Configurations\\Applications\\ProductService.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAA+wCUAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAABAAAAAAAAAAAAA+wBwAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-24T14:58:45.67Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+              "WhenOpened": "2026-05-24T14:58:45.67Z"
             },
             {
               "$type": "Document",
@@ -260,8 +258,7 @@
               "RelativeToolTip": "Configurations\\Binds\\AppSettings.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-24T14:25:49.234Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-24T14:25:49.234Z"
             },
             {
               "$type": "Document",
@@ -273,8 +270,7 @@
               "RelativeToolTip": "Configurations\\appsettings.yaml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
-              "WhenOpened": "2026-05-05T14:22:45.163Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-05T14:22:45.163Z"
             },
             {
               "$type": "Document",
@@ -286,8 +282,7 @@
               "RelativeToolTip": "Configurations\\appsettings.xml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
-              "WhenOpened": "2026-05-05T14:22:41.701Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-05T14:22:41.701Z"
             },
             {
               "$type": "Document",
@@ -299,8 +294,7 @@
               "RelativeToolTip": "Configurations\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-05-05T14:22:32.302Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-05T14:22:32.302Z"
             },
             {
               "$type": "Document",
@@ -312,8 +306,7 @@
               "RelativeToolTip": "Configurations\\appsettings.txt",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2026-05-05T14:22:09.327Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-05T14:22:09.327Z"
             },
             {
               "$type": "Document",
@@ -321,9 +314,9 @@
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Code\\.Net Study\\.Net\u57FA\u7840\\2.\u914D\u7F6E\u7EC4\u4EF6\\Configurations\\Configurations\\Program.cs",
               "RelativeDocumentMoniker": "Configurations\\Program.cs",
-              "ToolTip": "D:\\Code\\.Net Study\\.Net\u57FA\u7840\\2.\u914D\u7F6E\u7EC4\u4EF6\\Configurations\\Configurations\\Program.cs*",
-              "RelativeToolTip": "Configurations\\Program.cs*",
-              "ViewState": "AgIAAHsAAAAAAAAAAAAmwJUAAAAWAAAAAAAAAA==",
+              "ToolTip": "D:\\Code\\.Net Study\\.Net\u57FA\u7840\\2.\u914D\u7F6E\u7EC4\u4EF6\\Configurations\\Configurations\\Program.cs",
+              "RelativeToolTip": "Configurations\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJUAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-05T14:04:27.964Z",
               "EditorCaption": ""
