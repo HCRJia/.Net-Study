@@ -1,66 +1,13 @@
-/C# 高级/1.泛型/Generic/.vs
-/C# 高级/1.泛型/Generic/Generic/bin
-/C# 高级/1.泛型/Generic/Generic/obj
-/C# 高级/2.反射/Reflection/.vs
-/C# 高级/2.反射/Reflection/Reflection/bin
-/C# 高级/2.反射/Reflection/Reflection/obj
-/C# 高级/2.反射/Reflection/DB.Interface/bin
-/C# 高级/2.反射/Reflection/DB.Interface/obj
-/C# 高级/2.反射/Reflection/DB.MySql/bin
-/C# 高级/2.反射/Reflection/DB.MySql/obj
-/C# 高级/2.反射/Reflection/DB.Oracle/bin
-/C# 高级/2.反射/Reflection/DB.Oracle/obj
-/C# 高级/2.反射/Reflection/DB.SqlServer/bin
-/C# 高级/2.反射/Reflection/DB.SqlServer/obj
-/C# 高级/2.反射/Work/.vs
-/C# 高级/2.反射/Work/DAL/bin
-/C# 高级/2.反射/Work/DAL/obj
-/C# 高级/2.反射/Work/IDAL/bin
-/C# 高级/2.反射/Work/IDAL/obj
-/C# 高级/2.反射/Work/Model/obj
-/C# 高级/2.反射/Work/Model/bin
-/C# 高级/2.反射/Work/Work/bin
-/C# 高级/2.反射/Work/Work/obj
-/C# 高级/3.面向对象/MyOO/.vs
-/C# 高级/3.面向对象/MyOO/MyOO/bin
-/C# 高级/3.面向对象/MyOO/MyOO/obj
-/C# 高级/4.特性/Attribute/.cr
-/C# 高级/4.特性/Attribute/.vs
-/C# 高级/4.特性/Attribute/Attribute/bin
-/C# 高级/4.特性/Attribute/Attribute/obj
-/C# 高级/5.委托/Delegate/.vs
-/C# 高级/5.委托/Delegate/Delegate/bin
-/C# 高级/5.委托/Delegate/Delegate/obj
-/C# 高级/6.事件/MyEvent/.vs
-/C# 高级/6.事件/MyEvent/MyEvent/bin
-/C# 高级/6.事件/MyEvent/MyEvent/obj
-/C# 高级/7.Lambda表达式/MyLamdba/.vs
-/C# 高级/7.Lambda表达式/MyLamdba/MyLamdba/bin
-/C# 高级/7.Lambda表达式/MyLamdba/MyLamdba/obj
-/C# 高级/8.Linq/MyLinq/.vs
-/C# 高级/8.Linq/MyLinq/MyLinq/bin
-/C# 高级/8.Linq/MyLinq/MyLinq/obj
-/C# 高级/9.设计模式原则/DesignPatternPrinciple/.vs
-/C# 高级/9.设计模式原则/DesignPatternPrinciple/DesignPatternPrinciple/bin
-/C# 高级/9.设计模式原则/DesignPatternPrinciple/DesignPatternPrinciple/obj
-/C# 高级/10.Express表达式/MyExpress/.vs
-/C# 高级/10.Express表达式/MyExpress/MyExpress/bin
-/C# 高级/10.Express表达式/MyExpress/MyExpress/obj
-/C# 高级/11.IO和序列化/IOSerialize/.vs
-/C# 高级/11.IO和序列化/IOSerialize/IOSerialize/bin
-/C# 高级/11.IO和序列化/IOSerialize/IOSerialize/obj
-/C# 高级/12.加密解密/MyEncrypt/.cr
-/C# 高级/12.加密解密/MyEncrypt/.vs
-/C# 高级/12.加密解密/MyEncrypt/MyEncrypt/bin
-/C# 高级/12.加密解密/MyEncrypt/MyEncrypt/obj
-/C# 高级/13.设计模式/DesignPattern/.vs
-/C# 高级/14.AOP面向切片编程/AOP/.cr
-/C# 高级/14.AOP面向切片编程/AOP/.vs
-/C# 高级/14.AOP面向切片编程/AOP/AOP/bin
-/C# 高级/14.AOP面向切片编程/AOP/AOP/obj
-/C# 高级/15.多线程/AsyncThread/.cr
-/C# 高级/15.多线程/AsyncThread/.vs
-/C# 高级/15.多线程/AsyncThread/AsyncThread/bin
-/C# 高级/15.多线程/AsyncThread/AsyncThread/obj
-/工作流系统/Workflow_Back/.vs
-/工作流系统/Workflow_Back/.cr
+# Visual Studio
+.vs/
+**/bin/
+**/obj/
+
+# JetBrains Rider
+.idea/
+**/.cr/
+
+# 用户配置
+*.user
+*.suo
+*.DotSettings.user
